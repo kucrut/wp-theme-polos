@@ -1,0 +1,287 @@
+/*
+Theme Name: Baca!
+Theme URI:
+Author: kucrut
+Author URI: http://kucrut.org/
+Description: Baca aja1
+Version: 0.1
+License: GNU General Public License
+License URI: license.txt
+Tags:
+*/
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border:0;
+	font-family:inherit;
+	font-size:100%;
+	margin:0;
+	outline:0;
+	padding:0;
+	vertical-align:baseline}
+:focus {outline:0}
+ol, ul {list-style:none}
+table {
+	border-collapse:separate;
+	border-spacing:0}
+caption, th, td {
+	font-weight:normal;
+	text-align:left}
+blockquote:before, blockquote:after,
+q:before, q:after {content:""}
+blockquote, q {quotes:"" ""}
+
+a img {border:0}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display:block}
+audio, canvas, video {
+	display:inline-block;
+	*display:inline;
+	*zoom:1}
+audio:not([controls]) {display:none}
+[hidden] {display:none}
+html {
+	font-size:100%;
+	overflow-y:scroll;
+	-webkit-text-size-adjust:100%;
+	-ms-text-size-adjust:100%; }
+::-moz-selection { background:#fe57a1; color:#fff; text-shadow:none; }
+::selection { background:#fe57a1; color:#fff; text-shadow:none; }
+a:hover, a:active { outline:0; }
+
+
+pre {
+	white-space:pre;
+	white-space:pre-wrap;
+	word-wrap: break-word; }
+small {font-size: 85%; }
+sub, sup {
+	font-size:75%;
+	line-height:0;
+	position:relative;
+	vertical-align:baseline; }
+sup {top:-0.5em}
+sub {bottom:-0.25em}
+img {-ms-interpolation-mode:bicubic}
+svg:not(:root) { overflow: hidden; }
+figure { margin: 0; }
+
+button, input, select, textarea {
+	color:#875646;
+	font-size:100%;
+	margin:0;
+	vertical-align:baseline;
+	*vertical-align:middle;}
+button, input {line-height:normal}
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+	cursor:pointer;
+	-webkit-appearance:button;
+	*overflow:visible}
+input[type="checkbox"], input[type="radio"] {box-sizing:border-box; padding:0}
+input[type="search"] {
+	-webkit-appearance:textfield;
+	-moz-box-sizing:content-box;
+	-webkit-box-sizing:content-box;
+	box-sizing:content-box}
+input[type="search"]::-webkit-search-decoration {-webkit-appearance:none}
+button::-moz-focus-inner, input::-moz-focus-inner {border:0; padding:0}
+textarea {
+	overflow:auto;
+	vertical-align:top;
+	resize:vertical}
+input:valid, textarea:valid {}
+input:invalid, textarea:invalid {}
+
+/*** Start here ***/
+body {
+	background:#f8f8f8;
+	color:#333;
+	font:14px/1.6 sans-serif;
+}
+a {
+	text-decoration:none;
+	color:#21759B;
+}
+pre {
+	font:14px/1.4 'Bitstream Vera Sans Mono', 'Courier New', monospace;
+	background:#efefef;
+	line-height:1.5;
+	width:80%;
+	padding:1em;
+	margin:0 auto 4em;
+	max-height:400px;
+	overflow:auto}
+
+h1,h2,h3,h4,h5,
+#main-menu,
+#colophon{
+	font-family:'Linux Biolinum', sans-serif;
+	font-weight:normal;
+	line-height:1.1;
+}
+
+
+#page {
+	padding:20px;
+}
+
+/*** Header ***/
+#branding {
+	background:#f8f8f8;
+	padding:0 0 20px;
+	position:fixed;
+	height:90px;
+	z-index:999;
+	width:100%;
+}
+#branding hgroup {}
+#branding hgroup:after {
+}
+#site-title {
+	font-size:32px;
+	font-style:italic;
+	margin-bottom:.2em;
+}
+#site-description {
+	font-size:18px;
+	font-style:italic;
+
+}
+#site-description span {position:relative;}
+#site-description span:after {
+	content:' ';
+	height:1px;
+	width:100%;
+	background:#ddd;
+	position:absolute;
+	left:0;
+	bottom:-.75em;
+	padding-right:1em;
+}
+#main-menu {
+	position:absolute;
+	left:0;
+	top:110px;
+	bottom:80px;
+	width:225px;
+	line-height:1.5;
+}
+#main-menu li:before {
+	content:'\00bb\0020';
+}
+#main-menu a {
+	color:#333;
+}
+#main-menu {}
+
+
+
+/*** Footer ***/
+#colophon {
+	font-style:italic;
+	position:fixed;
+	bottom:0;
+	height:40px;
+	padding-top:40px;
+	background:#f8f8f8;
+	width:100%
+}
+#colophon:before {
+	content:' ';
+	height:1px;
+	width:400px;
+	background:#ddd;
+	position:absolute;
+	top:30px;
+}
+
+
+/*** Content ***/
+#content {
+	margin:110px 0 0 240px;
+	width:720px;
+}
+article {margin-bottom:25px;}
+.entry-title {
+	font-size:20px;
+	margin-bottom:.5em;
+}
+
+
+
+
+
+
+
+/* ==|== media queries ======================================================
+   PLACEHOLDER Media Queries for Responsive Design.
+   These override the primary ('mobile first') styles
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+  /* Style adjustments for viewports 480px and over go here */
+
+}
+
+@media only screen and (min-width: 768px) {
+  /* Style adjustments for viewports 768px and over go here */
+
+}
+
+
+
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+
+/* For image replacement */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Contain floats: h5bp.com/q */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+
+
+/* ==|== print styles =======================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
