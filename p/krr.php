@@ -58,3 +58,43 @@ function baca_doc_title( $title ) {
 	return $title;
 }
 add_filter( 'wp_title', 'baca_doc_title' );
+
+
+/**
+ * Paginate Links on index pages
+ */
+function kc_paginate_links( $query = null, $echo = true ) {
+	global $wp_rewrite;
+	if ( !$query ) {
+		global $wp_query;
+		$query = $wp_query;
+	}
+
+	if ( !is_object($query) )
+		return false;
+
+	$current = max( 1, $query->query_vars['paged'] );
+	$big = 999999999;
+
+	$pagination = array(
+		'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+		'format' => '',
+		'total' => $query->max_num_pages,
+		'current' => $current,
+		'prev_text' => __( '&laquo; Previous', 'baca' ),
+		'next_text' => __( 'Next &raquo;', 'baca' ),
+		'end_size' => 1,
+		'mid_size' => 2,
+		'show_all' => true,
+		'type' => 'list'
+	);
+	$links = paginate_links($pagination);
+
+	if ( empty($links) )
+		return false;
+
+	if ( $echo )
+		echo "<nav class='posts-nav'>\n\t{$links}</nav>\n";
+	else
+		return $links;
+}

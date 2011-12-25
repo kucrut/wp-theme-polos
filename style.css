@@ -173,7 +173,8 @@ h1,h2,h3,h4,h5 {
 }
 p,pre,ol,ul,table {margin-bottom:1.25em;}
 h1,h2,h3,h4,h5, .menu, #colophon,
-.wp-caption-text, .entry-data {
+.wp-caption-text, .entry-data,
+.posts-nav {
 	font-family:'Linux Biolinum', 'LinuxBiolinum', sans-serif;
 	font-weight:normal;
 }
@@ -190,7 +191,8 @@ abbr, .date {
 
 #branding a,
 .entry-title a,
-.menu .parent {
+.menu .parent,
+.posts-nav a {
 	color:#555;
 	text-decoration:none;
 	-webkit-transition:color .75s;
@@ -205,7 +207,9 @@ abbr, .date {
 .entry-title a:focus,
 .entry-title a:hover,
 .menu .parent:focus,
-.menu .parent:hover {
+.menu .parent:hover,
+.posts-nav a:focus,
+.posts-nav a:hover {
 	color:#dd4614;}
 
 
@@ -353,6 +357,18 @@ abbr, .date {
 .entry-content {}
 
 
+
+.posts-nav {text-align:right;}
+.posts-nav li {
+	display:inline;
+	font-size:1.1em;
+	text-transform:lowercase
+}
+.posts-nav a, .posts-nav .current {padding:0 .25em}
+.posts-nav .current {
+	font-weight:bold;
+	color:#555;
+}
 
 
 
