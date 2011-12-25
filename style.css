@@ -174,7 +174,7 @@ h1,h2,h3,h4,h5 {
 p,pre,ol,ul,table {margin-bottom:1.25em;}
 h1,h2,h3,h4,h5, .menu, #colophon,
 .wp-caption-text, .entry-data,
-.posts-nav {
+.posts-nav, .entry-terms {
 	font-family:'Linux Biolinum', 'LinuxBiolinum', sans-serif;
 	font-weight:normal;
 }
@@ -370,7 +370,8 @@ abbr, .date {
 	color:#555;
 }
 
-
+.entry-terms p {margin-bottom:0;}
+.entry-terms .label {font-weight:bold}
 
 /* ==|== media queries ======================================================
    PLACEHOLDER Media Queries for Responsive Design.

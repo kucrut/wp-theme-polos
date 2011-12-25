@@ -15,7 +15,7 @@
  *
  * @param array $reqs Array of classes/functions to check
  */
-function baca_check_req( $reqs, $message = '' ) {
+function kc_check_req( $reqs, $message = '' ) {
 	foreach ( $reqs as $req ) {
 		if ( !class_exists($req) || !function_exists($req) ) {
 			$message .= '<br />&laquo; <a href="'.wp_get_referer().'">Go back</a>.';
@@ -30,7 +30,7 @@ function baca_check_req( $reqs, $message = '' ) {
  * Document title (<title></title>)
  *
  */
-function baca_doc_title( $title ) {
+function kc_doc_title( $title ) {
 	global $page, $paged;
 
 	$sep = apply_filters( 'kc_doc_title_sep', '&laquo;' );
@@ -57,7 +57,7 @@ function baca_doc_title( $title ) {
 
 	return $title;
 }
-add_filter( 'wp_title', 'baca_doc_title' );
+add_filter( 'wp_title', 'kc_doc_title' );
 
 
 /**
@@ -98,3 +98,45 @@ function kc_paginate_links( $query = null, $echo = true ) {
 	else
 		return $links;
 }
+
+
+/**
+ * Get post terms
+ *
+ * This functions will return post meta array, which is passed through the 'kc_post_meta' filter.
+ *
+ * @param $post_object Post object, either from global $post variable or using the get_post() function
+ * @return array Post meta array
+ *
+ */
+
+function kc_post_terms( $post_object = '' ) {
+	if ( is_404() )
+		return;
+
+	if ( !$post_object ) {
+		global $post;
+		$post_object = $post;
+	}
+
+	if ( !is_object($post_object) )
+		return false;
+
+	$output = array();
+	$taxonomies = get_taxonomies( array(
+		'public'			=> true,
+		'object_type'	=> array($post_object->post_type)
+	), 'objects' );
+
+	if ( !is_array($taxonomies) || empty($taxonomies) )
+		return false;
+
+	foreach ( $taxonomies as $taxonomy ) {
+		$taxonomy_label = apply_filters( "kc_post_meta_taxo_label_{$taxonomy->name}", $taxonomy->label );
+		if ( $post_tems = get_the_term_list($post_object->ID, $taxonomy->name, "<span class='label'>{$taxonomy_label}:</span> ", ', ') )
+			$output[$taxonomy->name] = $post_tems;
+	}
+
+	return apply_filters( 'kc_post_meta', $output );
+}
+
