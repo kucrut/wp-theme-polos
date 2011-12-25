@@ -1,16 +1,23 @@
 <?php
 
 /**
- * @package KRR_Theme
+ * @package Baca_Theme
  * @version 0.1
  */
 
 ?>
-        <article id="post-<?php the_ID() ?>" <?php post_class() ?>>
-          <hgroup>
-            <h1 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><?php the_title() ?></a></h1>
-          </hgroup>
-          <div class="entry-content">
-            <?php the_content() ?>
-          </div>
-        </article>
+				<?php do_action( 'baca_before_entry' ); ?>
+				<article id="post-<?php the_ID() ?>" <?php post_class() ?>>
+					<hgroup class="entry-title">
+						<h1><a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><?php the_title() ?></a></h1>
+						<?php do_action( 'baca_after_entry_title' ); ?>
+					</hgroup>
+
+					<?php do_action( 'baca_before_entry_content' ); ?>
+					<div class="entry-content">
+						<?php the_content(__('Continue&hellip;', 'baca')) ?>
+					</div>
+					<?php do_action( 'baca_after_entry_content' ); ?>
+
+				</article>
+				<?php do_action( 'baca_after_entry' ); ?>

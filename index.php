@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package KRR_Theme
+ * @package Baca_Theme
  * @version 0.1
  */
 

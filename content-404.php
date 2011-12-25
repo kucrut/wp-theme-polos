@@ -1,16 +1,23 @@
 <?php
 
 /**
- * @package KRR_Theme
+ * @package Baca_Theme
  * @version 0.1
  */
 
 ?>
-        <article id="not-found" class="hentry 404">
-          <hgroup>
-            <h1 class="entry-title"><?php _e('Not found', 'krr') ?></h1>
-          </hgroup>
-          <div class="entry-content">
-            <p>Ooops, Not found!</p>
-          </div>
-        </article>
+				<?php do_action( 'baca_before_entry' ); ?>
+				<article id="not-found" class="hentry 404">
+					<hgroup class="entry-title">
+						<h1><?php _e('Not found', 'baca') ?></h1>
+						<?php do_action( 'baca_after_entry_title' ); ?>
+					</hgroup>
+
+					<?php do_action( 'baca_before_entry_content' ); ?>
+					<div class="entry-content">
+            <p><?php _e('Ooops, Not found!', 'baca') ?></p>
+					</div>
+					<?php do_action( 'baca_after_entry_content' ); ?>
+
+				</article>
+				<?php do_action( 'baca_after_entry' ); ?>
