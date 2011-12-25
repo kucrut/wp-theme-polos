@@ -62,7 +62,8 @@ function after_entry_title_single( $post_id ) {
 
 	$out  = '<p class="entry-data">';
 	$out .= '<span class="date" title="'.sprintf(__('Posted on %1$s', 'baca'), esc_attr(get_the_date('r')) ).'">'.get_the_date().'</span>';
-	$out .= ' <a href="'.get_comments_link().'">'.__('Comments', 'baca').'</a>';
+	if ( comments_open() && ! post_password_required() )
+		$out .= ' <a href="'.get_comments_link().'">'.__('Comments', 'baca').'</a>';
 	if ( $edit_link = get_edit_post_link() )
 		$out .= ' <a href="'.$edit_link.'">'.__('Edit', 'baca').'</a>';
 	$out .= '</p>';
