@@ -247,9 +247,10 @@ abbr, .date {
 	font-size:1.5em;
 	font-style:italic;
 	margin:0;
+	position:relative;
+	display:inline-block;
 }
-#site-description span {position:relative;}
-#site-description span:after {
+#site-description:after {
 	content:' ';
 	height:1px;
 	width:100%;

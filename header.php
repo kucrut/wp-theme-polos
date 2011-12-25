@@ -32,7 +32,7 @@ $lang_attr = ob_get_clean();
 			<hgroup>
 				<h1 id="site-title"><a class="no-ajaxy" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php if ( $site_desc = get_bloginfo('description') ) { ?>
-				<h2 id="site-description"><span><?php echo $site_desc ?></span></h2>
+				<h2 id="site-description"><?php echo $site_desc ?></h2>
 				<?php } ?>
 			</hgroup>
 			<?php wp_nav_menu( array( 'theme_location' => 'main', 'container' => 'nav', 'container_id' => 'main-menu', 'container_class' => 'menu-container', 'fallback_cb' => false ) ); ?>
