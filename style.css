@@ -147,11 +147,10 @@ input[type="button"]:focus, input[type="button"]:hover {
 }
 a:visited {color:#fe8771}
 a:focus, a:hover {text-decoration:underline}
-a:active,
-button:active,
+a:active, button:active,
 input[type="submit"]:active,
 input[type="button"]:active {
-	color:#C00303;
+	color:#c00303 !important;
 	text-decoration:none
 }
 code, pre {
@@ -258,8 +257,7 @@ button:after {content:' ↵';}
 	line-height:1.15;
 }
 
-
-
+/* LMNs */
 #branding a,
 .entry-title a,
 .menu .parent,
