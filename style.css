@@ -260,10 +260,13 @@ abbr, .date {
 	bottom:-.4em;
 	padding-right:1em;
 }
+
+
+/*** Menu */
 .menu-container {
 	position:absolute;
 	right:0;
-	line-height:1.5;
+	line-height:1;
 	top:10px;
 }
 .menu { text-align:right; }
@@ -276,6 +279,7 @@ abbr, .date {
 	display:block;
 	padding:.25em .75em;
 }
+
 .sub-menu {
 	display:none;
 	text-align:left;
@@ -288,7 +292,7 @@ abbr, .date {
 	background:#fefefe;
 	border-width:1px 0 0 1px;
 	border-style:solid;
-	border-color:#efefef;
+	border-color:#e0e0e0;
 	height:14px;
 	width:14px;
 	position:absolute;
@@ -306,17 +310,34 @@ abbr, .date {
 	background:#fefefe;
 	display:block;
 	white-space:nowrap;
-	border:1px solid #efefef;
+	border:1px solid #e0e0e0;
 	border-top:0;
 }
-.sub-menu li:first-child {border-top:1px solid #efefef;}
+.sub-menu li:first-child {border-top:1px solid #e0e0e0;}
 .sub-menu a {
-	padding:.25em 1em;
+	padding:.6em 1em;
 	z-index:3;
 	position:relative;
 }
-.menu :hover > .sub-menu {display:block;}
 
+.sub-menu .sub-menu {
+	padding-top:0;
+	left:100%;
+	top:-1px;
+}
+.sub-menu .sub-menu:before {
+	left:-7px;
+	top:.65em;
+	-webkit-transform:rotate(135deg);
+	-khtml-transform:rotate(135deg);
+	-moz-transform:rotate(135deg);
+	-ms-transform:rotate(135deg);
+	-o-transform:rotate(135deg);
+	transform:rotate(135deg);
+}
+.sub-menu .sub-menu a {padding-left:1.5em;}
+
+.menu :hover > .sub-menu {display:block;}
 .current-menu-item > a:after {content:' ↵'}
 .current-menu-ancestor > a:after,
 .current-menu-ancestor > .parent:after {
