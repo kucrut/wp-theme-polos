@@ -36,6 +36,9 @@ add_action( 'after_setup_theme', 'baca_setup' );
 # Scripts n styles
 function baca_sns() {
   wp_enqueue_style( 'baca', get_template_directory_uri().'/style.css', false, '0.1' );
+
+  if ( is_singular() && comments_open() && get_option('thread_comments') )
+		wp_enqueue_script( 'comment-reply' );
 }
 add_action( 'wp_enqueue_scripts', 'baca_sns' );
 
@@ -103,6 +106,15 @@ function baca_after_entry_content() {
 		echo "<div class='entry-terms'>\n\t{$out}</div>\n";
 }
 add_action( 'kct_after_entry_content', 'baca_after_entry_content' );
+
+
+function baca_comments_list() {
+	if ( !is_singular() || (!get_comments_number() && !comments_open()) )
+		return;
+
+	comments_template('', true);
+}
+add_action( 'kct_after_entry_content', 'baca_comments_list' );
 
 
 ?>

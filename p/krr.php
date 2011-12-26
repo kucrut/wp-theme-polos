@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package KRR_Theme
+ * @package Baca_Theme
  * @version 0.1
  */
 
@@ -132,4 +132,40 @@ function kct_post_terms( $post_object = '' ) {
 	return apply_filters( 'kct_post_meta', $output );
 }
 
+
+/**
+ * Comments list
+ */
+function kct_comments_list( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment; ?>
+	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+		<article id="comment-<?php comment_ID(); ?>" class="comment-item">
+			<footer>
+				<div class="comment-author vcard">
+					<?php echo get_avatar( $comment, 48 ); ?>
+					<cite class="fn"><?php comment_author_link() ?></cite>
+				</div>
+
+				<div class="comment-meta commentmetadata">
+					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>" class="comment-date"><?php printf( __( '%1$s at %2$s', 'baca' ), get_comment_date(), get_comment_time() ); ?></a>
+					<?php comment_reply_link( array_merge($args, array(
+						'depth'			=> $depth,
+						'max_depth'	=> $args['max_depth'],
+						'before'		=> '<span class="reply-link"> &ndash; ',
+						'after'			=> '</span>'
+					)) ); ?>
+					<?php edit_comment_link( __( 'Edit', 'baca' ), ' &ndash; ' ); ?>
+				</div>
+			</footer>
+
+			<div class="comment-content">
+				<?php
+					if ( $comment->comment_approved == '0' )
+						echo '<p><em>'.__( 'Your comment is awaiting moderation.', 'baca' ).'</em></p>';
+					comment_text();
+				?>
+			</div>
+		</article>
+	<?php
+}
 

@@ -63,7 +63,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 :focus {outline:0}
 ol, ul {list-style:none}
 table {
-	border-collapse:separate;
+	empty-cells:hide;
+	border-collapse:collapse;
 	border-spacing:0}
 caption, th, td {
 	font-weight:normal;
@@ -153,11 +154,11 @@ input[type="button"]:active {
 	color:#c00303 !important;
 	text-decoration:none
 }
-code, pre {
+code, pre, var {
 	color:#1a1a1a;
 	font-family: 'Bitstream Vera Sans Mono', 'Courier New', monospace }
 pre, blockquote {
-	background:#f5f5f5;
+	background:#fbfbfb;
 	border:1px solid #c0c0c0;
 	-webkit-border-radius:3px;
 	-khtml-border-radius:3px;
@@ -195,19 +196,25 @@ blockquote cite {
 	margin-top:.75em;
 }
 blockquote cite:before {content:'— '}
-
-h1,h2,h3,h4,h5 {
-	margin:1em 0 .5em;
-	line-height:1.1;
+dt, th {
+	font-weight:bold;
+	font-size:1.15em;
 }
-p,pre,ol,ul,table {margin-bottom:1.25em;}
-h1,h2,h3,h4,h5, blockquote cite,
+dd {margin-left:1.25em}
+h1,h2,h3,h4,h5 {
+	margin:.75em 0 .5em;
+	line-height:1.1;
+	font-weight:normal;
+}
+p,pre,ol,ul,table,blockquote,address,dd {margin-bottom:1.25em;}
+h1,h2,h3,h4,h5,h6, blockquote cite, label, address,
+sub, sup, dt, th,
 button, input[type="submit"], input[type="button"],
 .menu, #colophon,
 .wp-caption-text, .entry-data,
-.posts-nav, .entry-terms, .entry-pages {
+.posts-nav, .entry-terms, .entry-pages,
+.comment footer, .form-allowed-tags, .comment-notes {
 	font-family:'Linux Biolinum', 'LinuxBiolinum', sans-serif;
-	font-weight:normal;
 }
 
 h1 {font-size:2em}
@@ -215,16 +222,21 @@ h2 {font-size:1.75em}
 h3 {font-size:1.5em}
 h4,h5,h6 {font-size:1.25em; font-weight:bold}
 
-abbr, .date {
+abbr, acronym, .date {
 	border-bottom:1px dashed #c0c0c0;
 	cursor:help;
 }
 input, button, textarea {
+	font-family:sans-serif;
 	border:1px solid #c0c0c0;
-	padding:.25em;
+	padding:.25em .5em;
 	border-radius:3px;
 }
-input:focus, textarea:focus {border-color:#DD4614}
+textarea {padding:.5em;}
+input:focus, textarea:focus {
+	background:#fefefe;
+	border-color:#dd4614;
+}
 button,
 input[type="submit"],
 input[type="button"] {
@@ -240,6 +252,11 @@ input[type="button"]:active {
 	top:1px;
 }
 button:after {content:' ↵';}
+td, th {
+	border:1px solid #c0c0c0;
+	padding:.25em 1em;
+}
+
 
 /*** WordPress ***/
 .aligncenter {
@@ -475,9 +492,14 @@ button:after {content:' ↵';}
 	word-spacing:.15em
 }
 .entry-data a:before { content:'| '; color:#555}
-.entry-content ol, .entry-content ul {padding-left:2.5em;}
-.entry-content ol {list-style:decimal;}
-.entry-content ul {list-style:disc;}
+.entry-content ol, .entry-content ul,
+.comment-content ol, .comment-content ul {
+	padding-left:1.65em;}
+.entry-content ol, .comment-content ol {list-style:decimal;}
+.entry-content ul, .comment-content ul {list-style:disc;}
+.entry-content li ol, .entry-content li ul,
+.comment-content li ol, .comment-content li ul {
+	margin-bottom:0;}
 
 .entry-content a:hover img {border-color:#DD4614 !important;}
 .entry-content img {
@@ -516,11 +538,71 @@ button:after {content:' ↵';}
 .entry-terms p {margin-bottom:0;}
 .entry-terms .label, .entry-pages .label {font-weight:bold}
 
-/* ==|== media queries ======================================================
-   PLACEHOLDER Media Queries for Responsive Design.
-   These override the primary ('mobile first') styles
-   Modify as content requires.
-   ========================================================================== */
+
+/* Comments */
+#comments { margin-top:3em; }
+#comments-title { margin-bottom:.75em;}
+.comment footer {
+	overflow:hidden;
+	height:52px;
+	margin-bottom:10px;
+}
+.comment .avatar {
+	float:left;
+	margin-right:8px;
+	padding:1px;
+	border:1px solid #c0c0c0;
+	-webkit-border-radius:3px;
+	-khtml-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+}
+.comment-author {line-height:1.3}
+.comment-author cite {
+	font-style:normal;
+	font-size:1.25em;
+}
+.comment-content,
+.comment .children {
+	padding-left:60px;}
+.comment-content {
+	font-size:12px;
+	margin-bottom:2.5em;
+}
+.commentmetadata {display:inline-block;}
+.commentmetadata:after {
+	content:' ';
+	display:block;
+	background:#c0c0c0;
+	height:1px;
+	width:100%;
+	padding-right:.5em;
+	margin-top:5px;
+}
+.comment-content p {margin-bottom:1em;}
+
+#respond {margin-bottom:2.5em;}
+.comment #respond {padding-left:60px;}
+#commentform > p {
+	clear:both;
+	margin-bottom:.75em;
+}
+#commentform label {
+	float:left;
+	width:80px;
+}
+#commentform .required {display:none;}
+#commentform textarea, .form-allowed-tags { width:500px;}
+.form-allowed-tags {
+	line-height:1.25;
+	padding-left:80px;}
+#submit {margin-left:80px}
+
+#cancel-comment-reply-link {font-size:80%}
+.depth-4 #commentform textarea,
+.depth-4 .form-allowed-tags {
+	width:410px;}
+
 
 @media only screen and (min-width: 480px) {
   /* Style adjustments for viewports 480px and over go here */
