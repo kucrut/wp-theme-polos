@@ -585,11 +585,13 @@ td, th {
 
 #respond {margin-bottom:2.5em;}
 .comment #respond {padding-left:60px;}
-#commentform > p {
+#commentform > p,
+.kc-contact .field {
 	clear:both;
 	margin-bottom:.75em;
 }
-#commentform label {
+#commentform label,
+.kc-contact label {
 	float:left;
 	width:80px;
 }
@@ -604,7 +606,10 @@ td, th {
 	margin-right:.5em;
 }
 #commentform .required {display:none;}
-#commentform textarea, .form-allowed-tags { width:500px;}
+#commentform textarea,
+.form-allowed-tags,
+.kc-contact textarea {
+	width:500px;}
 .form-allowed-tags {
 	line-height:1.25;
 	padding-left:80px;}
@@ -614,6 +619,9 @@ td, th {
 .depth-4 #commentform textarea,
 .depth-4 .form-allowed-tags {
 	width:410px;}
+
+.kc-contact textarea {height:120px;}
+.kc-contact .submit {padding-left:80px;}
 
 
 @media only screen and (min-width: 480px) {
