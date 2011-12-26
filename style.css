@@ -220,14 +220,16 @@ abbr, .date {
 	border-bottom:1px dashed #c0c0c0;
 	cursor:help;
 }
-input, button {
+input, button, textarea {
 	border:1px solid #c0c0c0;
 	padding:.25em;
 	border-radius:3px;
 }
+input:focus, textarea:focus {border-color:#DD4614}
 button,
 input[type="submit"],
 input[type="button"] {
+	border-color:#c0c0c0;
 	margin-top:.5em;
 	padding:.25em .6em;
 	background:none;
