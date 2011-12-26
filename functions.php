@@ -16,15 +16,21 @@ if ( ! isset( $content_width ) )
 	$content_width = 750;
 
 
-# Initialise
-function baca_init() {
+# Setup
+if ( !function_exists('baca_setup') ) {
+function baca_setup() {
 	register_nav_menus(array(
 		'main'		=> __( 'Main Menu', 'baca' )
 	));
 
+	# Features
+	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'post-thumbnails' );
+
 	add_action( 'widgets_init', 'baca_sidebars' );
 }
-add_action( 'after_setup_theme', 'baca_init' );
+}
+add_action( 'after_setup_theme', 'baca_setup' );
 
 
 # Scripts n styles
@@ -45,22 +51,6 @@ function baca_sidebars() {
 		'after_title'		=> '</h3>',
 	) );
 }
-
-
-
-function baca_features() {
-	add_theme_support( 'post-thumbnails' );
-}
-
-
-function baca_dev() {
-	echo "<div class='kc-dev'><pre>\n";
-
-
-	echo "</pre></div>\n";
-}
-//add_action( 'wp_footer', 'baca_dev' );
-
 
 
 function after_entry_title_single( $post_id ) {
