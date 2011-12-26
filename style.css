@@ -213,7 +213,8 @@ button, input[type="submit"], input[type="button"],
 .menu, #colophon,
 .wp-caption-text, .entry-data,
 .posts-nav, .entry-terms, .entry-pages,
-.comment footer, .form-allowed-tags, .comment-notes {
+.comment footer, .form-allowed-tags,
+.comment-notes, .logged-in-as {
 	font-family:'Linux Biolinum', 'LinuxBiolinum', sans-serif;
 }
 
