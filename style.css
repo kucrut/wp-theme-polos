@@ -147,7 +147,13 @@ input[type="button"]:focus, input[type="button"]:hover {
 }
 a:visited {color:#fe8771}
 a:focus, a:hover {text-decoration:underline}
-a:active {color:#C00303;text-decoration:none}
+a:active,
+button:active,
+input[type="submit"]:active,
+input[type="button"]:active {
+	color:#C00303;
+	text-decoration:none
+}
 code, pre {
 	color:#1a1a1a;
 	font-family: 'Bitstream Vera Sans Mono', 'Courier New', monospace }
@@ -219,12 +225,16 @@ input, button {
 	padding:.25em;
 	border-radius:3px;
 }
-button, input[type="submit"], input[type="button"] {
+button,
+input[type="submit"],
+input[type="button"] {
 	margin-top:.5em;
 	padding:.25em .6em;
 	background:none;
 }
-button:active, input[type="submit"]:active, input[type="button"]:active {
+button:active,
+input[type="submit"]:active,
+input[type="button"]:active {
 	position:relative;
 	top:1px;
 }
