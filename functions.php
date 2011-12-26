@@ -77,7 +77,7 @@ function after_entry_title_single( $post_id ) {
 
 	echo $out;
 }
-add_action( 'baca_after_entry_title', 'after_entry_title_single' );
+add_action( 'kct_after_entry_title', 'after_entry_title_single' );
 
 
 # Replace parent menu item without URL with <span />
@@ -92,7 +92,7 @@ add_filter( 'walker_nav_menu_start_el', 'baca_menu_filter', 11, 4 );
 
 /* Post meta */
 function baca_after_entry_content() {
-	if ( !is_singular('post') )
+	if ( !is_singular() )
 		return;
 
 	wp_link_pages(array(
@@ -100,17 +100,19 @@ function baca_after_entry_content() {
 		'after'		=> '</nav>'
 	));
 
+	if ( !is_singular('post') )
+		return;
+
 	$out = '';
-	if ( $terms = kc_post_terms() ) {
+	if ( $terms = kct_post_terms() ) {
 		foreach ( $terms as $tax => $tax_terms )
 			$out .= "<p class='post-{$tax}'>{$tax_terms}</p>\n";
 	}
 
 	if ( $out )
 		echo "<div class='entry-terms'>\n\t{$out}</div>\n";
-
 }
-add_action( 'baca_after_entry_content', 'baca_after_entry_content' );
+add_action( 'kct_after_entry_content', 'baca_after_entry_content' );
 
 
 ?>

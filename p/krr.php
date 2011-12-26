@@ -15,7 +15,7 @@
  *
  * @param array $reqs Array of classes/functions to check
  */
-function kc_check_req( $reqs, $message = '' ) {
+function kct_check_req( $reqs, $message = '' ) {
 	foreach ( $reqs as $req ) {
 		if ( !class_exists($req) || !function_exists($req) ) {
 			$message .= '<br />&laquo; <a href="'.wp_get_referer().'">Go back</a>.';
@@ -30,13 +30,13 @@ function kc_check_req( $reqs, $message = '' ) {
  * Document title (<title></title>)
  *
  */
-function kc_doc_title( $title ) {
+function kct_doc_title( $title ) {
 	global $page, $paged;
 
-	$sep = apply_filters( 'kc_doc_title_sep', '&laquo;' );
-	$seplocation = apply_filters( 'kc_doc_title_seplocation', 'right' );
-	$pg_sep = apply_filters( 'kc_doc_title_pagenum_sep', '|' );
-	$home_sep = apply_filters( 'kc_doc_title_home_sep', '&mdash;' );
+	$sep = apply_filters( 'kct_doc_title_sep', '&laquo;' );
+	$seplocation = apply_filters( 'kct_doc_title_seplocation', 'right' );
+	$pg_sep = apply_filters( 'kct_doc_title_pagenum_sep', '|' );
+	$home_sep = apply_filters( 'kct_doc_title_home_sep', '&mdash;' );
 
 	$site_name = get_bloginfo( 'name', 'display' );
 	$site_desc = get_bloginfo( 'description', 'display');
@@ -57,13 +57,13 @@ function kc_doc_title( $title ) {
 
 	return $title;
 }
-add_filter( 'wp_title', 'kc_doc_title' );
+add_filter( 'wp_title', 'kct_doc_title' );
 
 
 /**
  * Paginate Links on index pages
  */
-function kc_paginate_links( $query = null, $echo = true ) {
+function kct_paginate_links( $query = null, $echo = true ) {
 	if ( !$query ) {
 		global $wp_query;
 		$query = $wp_query;
@@ -97,14 +97,12 @@ function kc_paginate_links( $query = null, $echo = true ) {
 /**
  * Get post terms
  *
- * This functions will return post meta array, which is passed through the 'kc_post_meta' filter.
- *
  * @param $post_object Post object, either from global $post variable or using the get_post() function
  * @return array Post meta array
  *
  */
 
-function kc_post_terms( $post_object = '' ) {
+function kct_post_terms( $post_object = '' ) {
 	if ( is_404() )
 		return;
 
@@ -126,12 +124,12 @@ function kc_post_terms( $post_object = '' ) {
 		return false;
 
 	foreach ( $taxonomies as $taxonomy ) {
-		$label = apply_filters( "kc_post_terms_tax_label_{$taxonomy->name}", $taxonomy->label );
+		$label = apply_filters( "kct_post_terms_tax_label_{$taxonomy->name}", $taxonomy->label );
 		if ( $post_tems = get_the_term_list($post_object->ID, $taxonomy->name, "<span class='label'>{$label}:</span> ", ', ') )
 			$output[$taxonomy->name] = $post_tems;
 	}
 
-	return apply_filters( 'kc_post_meta', $output );
+	return apply_filters( 'kct_post_meta', $output );
 }
 
 

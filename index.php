@@ -16,7 +16,7 @@
           get_template_part( 'content' );
         }
 
-        kc_paginate_links();
+        kct_paginate_links();
       } else {
         get_template_part( 'content', '404' );
       }
