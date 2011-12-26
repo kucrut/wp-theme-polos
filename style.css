@@ -105,7 +105,7 @@ svg:not(:root) { overflow: hidden; }
 figure { margin: 0; }
 
 button, input, select, textarea {
-	color:#875646;
+	color:inherit;
 	font-size:100%;
 	margin:0;
 	vertical-align:baseline;
@@ -138,9 +138,12 @@ body {
 	color:#333;
 	font:14px/1.6 sans-serif;
 }
-a, a:link {
+a, a:link,
+button:focus, button:hover,
+input[type="submit"]:focus, input[type="submit"]:hover,
+input[type="button"]:focus, input[type="button"]:hover {
 	text-decoration:none;
-	color:#DD4614;
+	color:#dd4614;
 }
 a:visited {color:#fe8771}
 a:focus, a:hover {text-decoration:underline}
@@ -194,6 +197,7 @@ h1,h2,h3,h4,h5 {
 }
 p,pre,ol,ul,table {margin-bottom:1.25em;}
 h1,h2,h3,h4,h5, blockquote cite,
+button, input[type="submit"], input[type="button"],
 .menu, #colophon,
 .wp-caption-text, .entry-data,
 .posts-nav, .entry-terms, .entry-pages {
@@ -210,6 +214,21 @@ abbr, .date {
 	border-bottom:1px dashed #c0c0c0;
 	cursor:help;
 }
+input, button {
+	border:1px solid #c0c0c0;
+	padding:.25em;
+	border-radius:3px;
+}
+button, input[type="submit"], input[type="button"] {
+	margin-top:.5em;
+	padding:.25em .6em;
+	background:none;
+}
+button:active, input[type="submit"]:active, input[type="button"]:active {
+	position:relative;
+	top:1px;
+}
+button:after {content:' ↵';}
 
 /*** WordPress ***/
 .aligncenter {
