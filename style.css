@@ -591,6 +591,16 @@ td, th {
 	float:left;
 	width:80px;
 }
+#commentform .form-submit {margin-bottom:1em;}
+#commentform .comment-subscription-form {
+	padding-left: 80px;
+	margin-bottom: 0;
+}
+#commentform .comment-subscription-form label {
+	float:none;
+	width:auto;
+	margin-right:.5em;
+}
 #commentform .required {display:none;}
 #commentform textarea, .form-allowed-tags { width:500px;}
 .form-allowed-tags {
