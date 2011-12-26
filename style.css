@@ -227,12 +227,14 @@ abbr, acronym, .date {
 	cursor:help;
 }
 input, button, textarea {
-	font-family:sans-serif;
 	border:1px solid #c0c0c0;
 	padding:.25em .5em;
 	border-radius:3px;
 }
-textarea {padding:.5em;}
+textarea {
+	padding:.5em;
+	font-family:sans-serif;
+}
 input:focus, textarea:focus {
 	background:#fefefe;
 	border-color:#dd4614;
