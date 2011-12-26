@@ -365,6 +365,7 @@ button:after {content:' ↵';}
 	-o-transform:rotate(45deg);
 	transform:rotate(45deg);
 }
+
 .sub-menu li {
 	background:#fefefe;
 	display:block;
@@ -384,6 +385,8 @@ button:after {content:' ↵';}
 	left:100%;
 	top:-1px;
 }
+
+
 .sub-menu .sub-menu:before {
 	left:-7px;
 	top:.65em;
@@ -396,11 +399,45 @@ button:after {content:' ↵';}
 }
 .sub-menu .sub-menu a {padding-left:1.5em;}
 
+
+.menu > :last-child .sub-menu {
+	left:auto;
+	right:-.25em;
+}
+.menu > :last-child .sub-menu:before {
+	left:auto;
+	right:1.5em;
+}
+.menu > :last-child .sub-menu .sub-menu {
+	left:auto;
+	right:100%;
+}
+.menu > :last-child .sub-menu .sub-menu:before {
+	left:auto;
+	right:-7px;
+	-webkit-transform:rotate(-45deg);
+	-khtml-transform:rotate(-45deg);
+	-moz-transform:rotate(-45deg);
+	-ms-transform:rotate(-45deg);
+	-o-transform:rotate(-45deg);
+	transform:rotate(-45deg);
+}
+.menu > :last-child .sub-menu .sub-menu a {
+	padding-left:1em;
+	padding-right:1.5em;}
+
+
 .menu :hover > .sub-menu {display:block;}
-.current-menu-item > a:after {content:' ↵'}
+.current-menu-item > a:after {
+	content:' ↵';
+	color:#111;
+}
 .current-menu-ancestor > a:after,
 .current-menu-ancestor > .parent:after {
-	content:' *';font-weight:bold}
+	content:' *';
+	color:#111;
+	font-weight:bold;
+}
 
 
 
