@@ -333,32 +333,32 @@ button:after {content:' ↵';}
 }
 
 
-/*** Menu */
-.menu-container {
+/*** Main menu */
+.main-menu-container {
 	position:absolute;
 	right:0;
 	line-height:1;
 	top:15px;
 }
-.menu { text-align:right; }
-.menu li {
+.main-menu { text-align:right; }
+.main-menu li {
 	display:inline-block;
 	position:relative;
 }
-.menu a, .menu .parent {
+.main-menu a, .main-menu .parent {
 	cursor:pointer;
 	display:block;
 	padding:.25em .75em;
 }
 
-.sub-menu {
+.main-menu .sub-menu {
 	display:none;
 	text-align:left;
 	position:absolute;
 	left:-.25em;
 	padding-top:10px;
 }
-.sub-menu:before {
+.main-menu .sub-menu:before {
 	content:' ';
 	background:#fefefe;
 	border-width:1px 0 0 1px;
@@ -378,28 +378,27 @@ button:after {content:' ↵';}
 	transform:rotate(45deg);
 }
 
-.sub-menu li {
+.main-menu .sub-menu li {
 	background:#fefefe;
 	display:block;
 	white-space:nowrap;
 	border:1px solid #e0e0e0;
 	border-top:0;
 }
-.sub-menu li:first-child {border-top:1px solid #e0e0e0;}
-.sub-menu a {
+.main-menu .sub-menu li:first-child {border-top:1px solid #e0e0e0;}
+.main-menu .sub-menu a {
 	padding:.6em 1em;
 	z-index:3;
 	position:relative;
 }
 
-.sub-menu .sub-menu {
+.main-menu .sub-menu .sub-menu {
 	padding-top:0;
 	left:100%;
 	top:-1px;
 }
 
-
-.sub-menu .sub-menu:before {
+.main-menu .sub-menu .sub-menu:before {
 	left:-7px;
 	top:.65em;
 	-webkit-transform:rotate(135deg);
@@ -409,22 +408,21 @@ button:after {content:' ↵';}
 	-o-transform:rotate(135deg);
 	transform:rotate(135deg);
 }
-.sub-menu .sub-menu a {padding-left:1.5em;}
+.main-menu .sub-menu .sub-menu a {padding-left:1.5em;}
 
-
-.menu > :last-child .sub-menu {
+.main-menu > :last-child .sub-menu {
 	left:auto;
 	right:-.25em;
 }
-.menu > :last-child .sub-menu:before {
+.main-menu > :last-child .sub-menu:before {
 	left:auto;
 	right:1.5em;
 }
-.menu > :last-child .sub-menu .sub-menu {
+.main-menu > :last-child .sub-menu .sub-menu {
 	left:auto;
 	right:100%;
 }
-.menu > :last-child .sub-menu .sub-menu:before {
+.main-menu > :last-child .sub-menu .sub-menu:before {
 	left:auto;
 	right:-7px;
 	-webkit-transform:rotate(-45deg);
@@ -434,23 +432,21 @@ button:after {content:' ↵';}
 	-o-transform:rotate(-45deg);
 	transform:rotate(-45deg);
 }
-.menu > :last-child .sub-menu .sub-menu a {
+.main-menu > :last-child .sub-menu .sub-menu a {
 	padding-left:1em;
 	padding-right:1.5em;}
 
-
-.menu :hover > .sub-menu {display:block;}
-.current-menu-item > a:after {
+.main-menu :hover > .sub-menu {display:block;}
+.main-menu .current-menu-item > a:after {
 	content:' ↵';
 	color:#111;
 }
-.current-menu-ancestor > a:after,
-.current-menu-ancestor > .parent:after {
+.main-menu .current-menu-ancestor > a:after,
+.main-menu .current-menu-ancestor > .parent:after {
 	content:' *';
 	color:#111;
 	font-weight:bold;
 }
-
 
 
 /*** Footer ***/
@@ -469,7 +465,6 @@ button:after {content:' ↵';}
 	top:0;
 }
 #colophon p {margin:0;}
-
 
 
 /*** Content ***/
