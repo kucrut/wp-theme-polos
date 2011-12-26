@@ -9,6 +9,13 @@
 require_once get_template_directory() . '/p/krr.php';
 
 
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if ( ! isset( $content_width ) )
+	$content_width = 750;
+
+
 # Initialise
 function baca_init() {
 	register_nav_menus(array(
@@ -88,6 +95,11 @@ function baca_after_entry_content() {
 	if ( !is_singular('post') )
 		return;
 
+	wp_link_pages(array(
+		'before'	=> '<nav class="entry-pages"><span class="label">'.__('Pages').':</span>',
+		'after'		=> '</nav>'
+	));
+
 	$out = '';
 	if ( $terms = kc_post_terms() ) {
 		foreach ( $terms as $tax => $tax_terms )
@@ -96,6 +108,7 @@ function baca_after_entry_content() {
 
 	if ( $out )
 		echo "<div class='entry-terms'>\n\t{$out}</div>\n";
+
 }
 add_action( 'baca_after_entry_content', 'baca_after_entry_content' );
 

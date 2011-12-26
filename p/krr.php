@@ -140,3 +140,17 @@ function kc_post_terms( $post_object = '' ) {
 	return apply_filters( 'kc_post_meta', $output );
 }
 
+
+/**
+ * Fluid Vide: oEmbed
+ */
+function kc_embed_filter( $return, $data, $url ) {
+	echo '<pre>'.print_r(str_replace('<', '&lt;', $return), true).'</pre>';
+	echo '<pre>'.print_r(str_replace('<', '&lt;', $data), true).'</pre>';
+	echo '<pre>'.print_r(str_replace('<', '&lt;', $url), true).'</pre>';
+
+	return $return;
+}
+//add_filter('embed_oembed_html', 'kc_embed_filter', 10, 3);
+
+

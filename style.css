@@ -130,13 +130,6 @@ textarea {
 input:valid, textarea:valid {}
 input:invalid, textarea:invalid {}
 
-/*** WordPress ***/
-.aligncenter {margin:0 auto;}
-
-
-
-.wp-caption.aligncenter .wp-caption-text {text-align:center}
-
 
 /*** Start here ***/
 body {
@@ -174,7 +167,7 @@ h1,h2,h3,h4,h5 {
 p,pre,ol,ul,table {margin-bottom:1.25em;}
 h1,h2,h3,h4,h5, .menu, #colophon,
 .wp-caption-text, .entry-data,
-.posts-nav, .entry-terms {
+.posts-nav, .entry-terms, .entry-pages {
 	font-family:'Linux Biolinum', 'LinuxBiolinum', sans-serif;
 	font-weight:normal;
 }
@@ -188,6 +181,24 @@ abbr, .date {
 	border-bottom:1px dashed #c0c0c0;
 	cursor:help;
 }
+
+/*** WordPress ***/
+.aligncenter {
+	display:block;
+	margin:.5em auto;
+}
+.alignleft {float:left;}
+.alignleft, .alignnone { margin:.5em 1em .5em 0; }
+.alignright {
+	float:right;
+	margin:.5em 1em 0 .5em;
+}
+.wp-caption-text {
+	text-align:center;
+	line-height:1.15;
+}
+
+
 
 #branding a,
 .entry-title a,
@@ -347,6 +358,7 @@ abbr, .date {
 
 /*** Footer ***/
 #colophon {
+	clear:both;
 	font-style:italic;
 	position:relative;
 	padding-top:5px;
@@ -376,24 +388,43 @@ abbr, .date {
 .entry-content ol, .entry-content ul {padding-left:2.5em;}
 .entry-content ol {list-style:decimal;}
 .entry-content ul {list-style:disc;}
-.entry-content {}
+
+.entry-content a:hover img {border-color:#DD4614 !important;}
+.entry-content img {
+	max-width:100%;
+	height:auto;
+}
+.entry-content a img {
+	padding:4px;
+	border:1px solid #c0c0c0 !important;
+	max-width:-webkit-calc(100% - 10px);
+	max-width:-khtml-calc(100% - 10px);
+	max-width:-moz-calc(100% - 10px);
+	max-width:-ms-calc(100% - 10px);
+	max-width:-o-calc(100% - 10px);
+	max-width:calc(100% - 10px);
+}
 
 
-
-.posts-nav {text-align:right;}
+.posts-nav {
+	clear:both;
+	text-align:center;}
 .posts-nav li {
 	display:inline;
 	font-size:1.1em;
 	text-transform:lowercase
 }
-.posts-nav a, .posts-nav .current {padding:0 .25em}
+.posts-nav a, .posts-nav .current,
+.entry-pages a {
+	padding:0 .25em}
 .posts-nav .current {
 	font-weight:bold;
 	color:#555;
 }
 
+.entry-terms, .entry-pages {clear:both}
 .entry-terms p {margin-bottom:0;}
-.entry-terms .label {font-weight:bold}
+.entry-terms .label, .entry-pages .label {font-weight:bold}
 
 /* ==|== media queries ======================================================
    PLACEHOLDER Media Queries for Responsive Design.
