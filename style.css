@@ -148,24 +148,53 @@ a:active {color:#C00303;text-decoration:none}
 code, pre {
 	color:#1a1a1a;
 	font-family: 'Bitstream Vera Sans Mono', 'Courier New', monospace }
-pre {
-	font-size:14px;
-	line-height:1.4;
+pre, blockquote {
 	background:#f5f5f5;
 	border:1px solid #c0c0c0;
+	-webkit-border-radius:3px;
+	-khtml-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+}
+pre {
 	line-height:1.5;
 	padding:1em 1.5em;
 	max-height:400px;
 	overflow:auto;
-	border-radius:3px;
 }
+blockquote {
+	font-family:'Bitstream Vera Serif', 'Georgia', serif;
+	font-style:italic;
+	width:80%;
+	margin:0 auto;
+	padding:1.5em 1.5em 1em;
+	overflow:hidden;
+	position:relative;
+}
+blockquote:before {
+	content:'❝';
+	color:#666;
+	font-size:3em;
+	line-height:1;
+	position:absolute;
+	top:.3em;
+}
+blockquote p:first-child {text-indent:2em;}
+blockquote p:last-child {margin-bottom:0}
+blockquote cite {
+	font-style:normal;
+	float:right;
+	margin-top:.75em;
+}
+blockquote cite:before {content:'— '}
 
 h1,h2,h3,h4,h5 {
 	margin:1em 0 .5em;
 	line-height:1.1;
 }
 p,pre,ol,ul,table {margin-bottom:1.25em;}
-h1,h2,h3,h4,h5, .menu, #colophon,
+h1,h2,h3,h4,h5, blockquote cite,
+.menu, #colophon,
 .wp-caption-text, .entry-data,
 .posts-nav, .entry-terms, .entry-pages {
 	font-family:'Linux Biolinum', 'LinuxBiolinum', sans-serif;
