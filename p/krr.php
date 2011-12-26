@@ -64,7 +64,6 @@ add_filter( 'wp_title', 'kc_doc_title' );
  * Paginate Links on index pages
  */
 function kc_paginate_links( $query = null, $echo = true ) {
-	global $wp_rewrite;
 	if ( !$query ) {
 		global $wp_query;
 		$query = $wp_query;
@@ -77,16 +76,11 @@ function kc_paginate_links( $query = null, $echo = true ) {
 	$big = 999999999;
 
 	$pagination = array(
-		'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
-		'format' => '',
-		'total' => $query->max_num_pages,
-		'current' => $current,
-		'prev_text' => __( '&laquo; Previous', 'baca' ),
-		'next_text' => __( 'Next &raquo;', 'baca' ),
-		'end_size' => 1,
-		'mid_size' => 2,
-		'show_all' => true,
-		'type' => 'list'
+		'base'		=> str_replace( $big, '%#%', get_pagenum_link($big) ),
+		'format'	=> '',
+		'total'		=> $query->max_num_pages,
+		'current'	=> $current,
+		'type'		=> 'list'
 	);
 	$links = paginate_links($pagination);
 
@@ -132,8 +126,8 @@ function kc_post_terms( $post_object = '' ) {
 		return false;
 
 	foreach ( $taxonomies as $taxonomy ) {
-		$taxonomy_label = apply_filters( "kc_post_meta_taxo_label_{$taxonomy->name}", $taxonomy->label );
-		if ( $post_tems = get_the_term_list($post_object->ID, $taxonomy->name, "<span class='label'>{$taxonomy_label}:</span> ", ', ') )
+		$label = apply_filters( "kc_post_terms_tax_label_{$taxonomy->name}", $taxonomy->label );
+		if ( $post_tems = get_the_term_list($post_object->ID, $taxonomy->name, "<span class='label'>{$label}:</span> ", ', ') )
 			$output[$taxonomy->name] = $post_tems;
 	}
 
