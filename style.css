@@ -275,7 +275,7 @@ abbr, .date {
 /*** Header ***/
 #branding {
 	position:relative;
-	padding-bottom:20px;
+	padding:5px 0 25px;
 	margin-bottom:20px;
 }
 #site-title {
@@ -307,7 +307,7 @@ abbr, .date {
 	position:absolute;
 	right:0;
 	line-height:1;
-	top:10px;
+	top:15px;
 }
 .menu { text-align:right; }
 .menu li {
