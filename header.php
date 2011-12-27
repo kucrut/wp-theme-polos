@@ -20,9 +20,7 @@ $lang_attr = ob_get_clean();
 <!--[if gt IE 8]><!--> <html class="no-js" <?php echo $lang_attr; ?>> <!--<![endif]-->
 <head>
   <meta charset="<?php bloginfo( 'charset' ) ?>">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title><?php wp_title('') ?></title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
   <?php wp_head() ?>
 </head>
 

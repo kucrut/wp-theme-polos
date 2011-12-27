@@ -60,6 +60,18 @@ function kct_doc_title( $title ) {
 add_filter( 'wp_title', 'kct_doc_title' );
 
 
+# <head /> stuff
+function kct_head_stuff() { ?>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<?php }
+
+
 /**
  * Paginate Links on index pages
  */

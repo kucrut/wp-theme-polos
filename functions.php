@@ -18,19 +18,23 @@ if ( ! isset( $content_width ) )
 
 # Setup
 if ( !function_exists('baca_setup') ) {
-function baca_setup() {
-	register_nav_menus(array(
-		'main'		=> __( 'Main Menu', 'baca' )
-	));
+	function baca_setup() {
+		register_nav_menus(array(
+			'main'		=> __( 'Main Menu', 'baca' )
+		));
 
-	# Features
-	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( 'post-thumbnails' );
+		# Features
+		add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'post-thumbnails' );
 
-	add_action( 'widgets_init', 'baca_sidebars' );
-}
+		add_action( 'widgets_init', 'baca_sidebars' );
+	}
 }
 add_action( 'after_setup_theme', 'baca_setup' );
+
+
+# <head /> stuff
+add_action( 'wp_head', 'kct_head_stuff', 0 );
 
 
 # Scripts n styles
