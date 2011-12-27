@@ -33,6 +33,13 @@ function kct_body_class( $classes ) {
 	if ( is_singular() )
 		$classes[] = 'singular';
 
+	global $wp_registered_sidebars;
+	if ( !empty($wp_registered_sidebars) ) {
+		foreach ( array_keys($wp_registered_sidebars) as $sidebar )
+			if ( is_active_sidebar($sidebar) )
+				$classes[] = "active-sidebar-{$sidebar}";
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'kct_body_class' );
@@ -273,4 +280,10 @@ function kct_comment_form_fields( $fields ) {
 }
 add_filter( 'comment_form_default_fields', 'kct_comment_form_fields' );
 
+
+function krr_dev() {
+	echo '<pre>';
+	echo '</pre>';
+}
+//add_action( 'wp_footer', 'krr_dev' );
 

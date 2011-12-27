@@ -210,7 +210,7 @@ p,pre,ol,ul,table,blockquote,address,dd {margin-bottom:1.25em;}
 h1,h2,h3,h4,h5,h6, blockquote cite, label, address,
 sub, sup, dt, th,
 button, input[type="submit"], input[type="button"],
-.menu, #colophon,
+.menu, #colophon .nw, .widget-title,
 .wp-caption-text, .entry-data,
 .posts-nav, .entry-terms, .entry-pages,
 .comment footer, .form-allowed-tags,
@@ -470,9 +470,9 @@ td, th {
 /*** Footer ***/
 #colophon {
 	clear:both;
-	font-style:italic;
 	position:relative;
-	padding-top:5px;
+	padding-top:10px;
+	overflow:hidden;
 }
 #colophon:before {
 	content:' ';
@@ -481,9 +481,18 @@ td, th {
 	background:#c0c0c0;
 	position:absolute;
 	top:0;
+	left:0;
 }
-#colophon p {margin:0;}
-
+#colophon .nw {
+	margin:0;
+	font-style:italic;
+	width:45%;
+}
+#colophon .cl {float:left}
+#colophon .wp {
+	float:right;
+	text-align:right;
+}
 
 /*** Content ***/
 #content {}
@@ -635,6 +644,24 @@ td, th {
 .kc-contact .submit {padding-left:80px;}
 
 
+/* Widgets */
+.active-sidebar-wa-bottom #page {padding-bottom:10px;}
+.widget {
+	font-size:.857em;
+	float:left;
+	width:230px;
+	margin:0 30px 15px 0;
+}
+.widget:nth-child(3n+3) {margin-right:0 !important}
+.widget p, .widget ol, .widget ul {margin-bottom:.75em;}
+.widget li {
+	padding-left:1em;
+	text-indent:-1em;
+	margin-bottom:.15em;
+}
+.widget li:before {content:'\00bb\00a0'}
+
+
 /* Small screens */
 @media only screen and (max-width: 880px) {
 	body {background:none}
@@ -651,7 +678,6 @@ td, th {
 	.main-menu .sub-menu {display:block !important;position:static !important;padding:.75em 0 0 1em !important;margin:0}
 	.main-menu .sub-menu:before {display:none !important}
 
-
 	h1 {font-size:1.6em}
 	.wp-caption {max-width:99% !important}
 	.entry-content img, .entry-content a img {max-width:95% !important;}
@@ -666,8 +692,12 @@ td, th {
 	.comment .children {padding-left:20px;}
 	.commentmetadata {font-size:.9em}
 	.commentmetadata:after {display:none;}
-}
 
+	.widget {width:30%;margin-right:5%}
+}
+@media only screen and (width: 320px) {
+	.widget {float:none;width:100%;margin:0}
+}
 
 
 /* ==|== non-semantic helper classes ========================================
