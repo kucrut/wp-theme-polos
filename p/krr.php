@@ -26,6 +26,19 @@ function kct_check_req( $reqs, $message = '' ) {
 }
 
 
+/**
+ * Some more body classes
+ */
+function kct_body_class( $classes ) {
+	if ( is_singular() )
+		$classes[] = 'singular';
+
+	return $classes;
+}
+add_filter( 'body_class', 'kct_body_class' );
+
+
+
 /*
  * Document title (<title></title>)
  *
