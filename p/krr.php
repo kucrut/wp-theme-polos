@@ -146,12 +146,10 @@ function kct_post_terms( $post_object = '', $echo = true ) {
 	if ( !$echo )
 		return $terms;
 
-	$out  = "<dl class='entry-terms'>\n";
-	foreach ( $terms as $tax => $tax_terms ) {
-		$out .= "\t<dt class='label {$tax}'>{$tax_terms['label']}:</dt>\n";
-		$out .= "\t<dd class='terms {$tax}'>{$tax_terms['terms']}</dd>\n";
-	}
-	$out .="</dl>\n";
+	$out  = "<ul class='entry-terms'>\n";
+	foreach ( $terms as $tax => $tax_terms )
+		$out .= "\t<li class='{$tax}'><span class='label'>{$tax_terms['label']}:</span> {$tax_terms['terms']}</li>";
+	$out .="</ul>\n";
 
 	echo $out;
 }
