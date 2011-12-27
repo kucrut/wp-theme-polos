@@ -8,10 +8,10 @@
 ?>
 				<?php do_action( 'kct_before_entry' ); ?>
 				<article id="not-found" class="hentry 404">
-					<hgroup class="entry-title">
+					<header class="entry-title">
 						<h1><?php _e('Not found', 'baca') ?></h1>
 						<?php do_action( 'kct_after_entry_title' ); ?>
-					</hgroup>
+					</header>
 
 					<?php do_action( 'kct_before_entry_content' ); ?>
 					<div class="entry-content">
