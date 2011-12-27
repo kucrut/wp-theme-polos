@@ -8,10 +8,12 @@
 ?>
 				<?php do_action( 'kct_before_entry' ); ?>
 				<article id="post-<?php the_ID() ?>" <?php post_class() ?>>
+					<?php if ( $title = get_the_title() ) { ?>
 					<header class="entry-title">
 						<h1><a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><?php the_title() ?></a></h1>
 						<?php do_action( 'kct_after_entry_title' ); ?>
 					</header>
+					<?php } ?>
 
 					<?php do_action( 'kct_before_entry_content' ); ?>
 					<div class="entry-content">
