@@ -666,7 +666,8 @@ td, th {
 
 /* Searchform */
 #searchform {
-	width:200px;
+	width:190px;
+	height:2em;
 	position:absolute;
 	right:.75em;
 	top:20px;
@@ -685,7 +686,6 @@ td, th {
 	position:absolute;
 	right:5px;
 	top:.25em;
-	z-index:5;
 }
 
 
@@ -701,7 +701,7 @@ td, th {
 	.main-menu-container {position:static}
 	.main-menu {text-align:left !important}
 	.main-menu li {position:static;display:block;margin-bottom:.75em !important;border:0 !important}
-	.main-menu a, .main-menu .parent {padding:0 !important}
+	.main-menu a, .main-menu .parent {padding:0 !important;display:inline !important}
 	.main-menu .sub-menu {display:block !important;position:static !important;padding:.75em 0 0 1em !important;margin:0}
 	.main-menu .sub-menu:before {display:none !important}
 
@@ -721,6 +721,7 @@ td, th {
 	.commentmetadata:after {display:none;}
 
 	.widget {width:30%;margin-right:5%}
+	#searchform {position:relative;right:auto;top:auto;margin:1.5em 0 1em}
 }
 
 @media only screen and (width: 320px) {

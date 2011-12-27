@@ -27,13 +27,12 @@ $lang_attr = ob_get_clean();
 <body <?php body_class() ?>>
 	<div id="page">
 		<header id="branding" role="banner">
+			<?php do_action( 'branding_before' ) ?>
 			<hgroup>
-				<?php do_action( 'branding_before' ) ?>
 				<h1 id="site-title"><a class="no-ajaxy" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php if ( $site_desc = get_bloginfo('description') ) { ?>
 				<h2 id="site-description"><?php echo $site_desc ?></h2>
 				<?php } ?>
-				<?php do_action( 'branding_after' ) ?>
 			</hgroup>
 			<?php wp_nav_menu( array(
 				'theme_location'	=> 'main',
@@ -43,4 +42,5 @@ $lang_attr = ob_get_clean();
 				'menu_class'			=> 'menu main-menu',
 				'fallback_cb'			=> false
 			) ); ?>
+			<?php do_action( 'branding_after' ) ?>
 		</header>
