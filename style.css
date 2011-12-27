@@ -599,6 +599,7 @@ td, th {
 	clear:both;
 	margin-bottom:.75em;
 }
+.kc-contact input {width:240px;}
 #commentform label,
 .kc-contact label {
 	float:left;
