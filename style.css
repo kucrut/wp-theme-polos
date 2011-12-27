@@ -622,8 +622,9 @@ td, th {
 	width:500px;}
 .form-allowed-tags {
 	line-height:1.25;
-	padding-left:80px;}
-#submit {margin-left:80px}
+	padding-left:80px;
+}
+.form-submit {padding-left:80px}
 
 #cancel-comment-reply-link {font-size:80%}
 .depth-4 #commentform textarea,
@@ -634,14 +635,37 @@ td, th {
 .kc-contact .submit {padding-left:80px;}
 
 
-@media only screen and (min-width: 480px) {
-  /* Style adjustments for viewports 480px and over go here */
+/* Small screens */
+@media only screen and (max-width: 880px) {
+	body {background:none}
+	#page {width:auto;margin:0;padding:1em;box-shadow:none;border:0}
+	#branding {height:auto;margin-bottom:0;padding-bottom:1em;}
+	#site-title {font-size:2em}
+	#site-description {font-size:1em;margin-bottom:2em}
+	#site-description:after {padding-right:0;}
 
-}
+	.main-menu-container {position:static}
+	.main-menu {text-align:left !important}
+	.main-menu li {position:static;display:block;margin-bottom:.75em !important;border:0 !important}
+	.main-menu a, .main-menu .parent {padding:0 !important}
+	.main-menu .sub-menu {display:block !important;position:static !important;padding:.75em 0 0 1em !important;margin:0}
+	.main-menu .sub-menu:before {display:none !important}
 
-@media only screen and (min-width: 768px) {
-  /* Style adjustments for viewports 768px and over go here */
 
+	h1 {font-size:1.6em}
+	.wp-caption {max-width:99% !important}
+	.entry-content img, .entry-content a img {max-width:95% !important;}
+	#commentform label {float:none;width:auto;display:inline:block}
+	#commentform input, #commentform textarea {display:block; width:95%;margin:0 auto}
+	.form-allowed-tags, .form-submit {padding-left:0;width:auto !important}
+	.comment footer {height:auto;line-height:1.2;overflow:visible}
+	.comment-content {clear:both}
+	.comment-content, .comment #respond {padding-left:0}
+	.avatar {width:32px;height:auto;margin-right:8px}
+	.comment-author cite {font-size:1.1em}
+	.comment .children {padding-left:20px;}
+	.commentmetadata {font-size:.9em}
+	.commentmetadata:after {display:none;}
 }
 
 
