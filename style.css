@@ -606,7 +606,7 @@ td, th {
 	width:auto;
 	margin-right:.5em;
 }
-#commentform .required {display:none;}
+#commentform .required {color:#a51b22;}
 #commentform textarea,
 .form-allowed-tags,
 .kc-contact textarea {

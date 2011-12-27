@@ -169,3 +169,26 @@ function kct_comments_list( $comment, $args, $depth ) {
 	<?php
 }
 
+
+/**
+ * Comment form fields
+ */
+function kct_comment_form_fields( $fields ) {
+	$commenter = wp_get_current_commenter();
+	$user = wp_get_current_user();
+	$user_identity = ! empty( $user->ID ) ? $user->display_name : '';
+
+	$req = get_option( 'require_name_email' );
+	$aria_req = ( $req ? " aria-required='true'" : '' );
+
+	$fields['author']	= '<p class="comment-form-author">' . '<label for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' )  . '</label>'.
+											'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
+	$fields['email']	= '<p class="comment-form-email"><label for="email">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+											'<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
+	$fields['url']		= '<p class="comment-form-url"><label for="url">' . __( 'Website' ) . '</label>' .
+											'<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>';
+
+	return $fields;
+}
+add_filter( 'comment_form_default_fields', 'kct_comment_form_fields' );
+
