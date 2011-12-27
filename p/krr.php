@@ -158,6 +158,23 @@ function kct_post_terms( $post_object = '', $echo = true ) {
 
 
 /**
+ * Get comments number of a post
+ *
+ * @param $post_id int Post ID
+ * @param $type Comments type. ''|pings|comment|pingback|trackback Empty string for all types (default)
+ *
+ * @return int Comments number
+ */
+function kct_get_comments_count( $post_id = 0, $type = '' ) {
+	return count(get_comments(array(
+		'post_id'	=> $post_id,
+		'status'	=> 'approve',
+		'type'		=> $type
+	)));
+}
+
+
+/**
  * Comments list
  */
 function kct_comments_list( $comment, $args, $depth ) {
