@@ -84,7 +84,7 @@ add_filter( 'walker_nav_menu_start_el', 'baca_menu_filter', 11, 4 );
 
 
 /* Post meta */
-function baca_after_entry_content() {
+function baca_after_singular_content() {
 	if ( !is_singular() )
 		return;
 
@@ -93,19 +93,10 @@ function baca_after_entry_content() {
 		'after'		=> '</nav>'
 	));
 
-	if ( !is_singular('post') )
-		return;
-
-	$out = '';
-	if ( $terms = kct_post_terms() ) {
-		foreach ( $terms as $tax => $tax_terms )
-			$out .= "<p class='post-{$tax}'>{$tax_terms}</p>\n";
-	}
-
-	if ( $out )
-		echo "<div class='entry-terms'>\n\t{$out}</div>\n";
+	if ( is_singular('post') )
+		kct_post_terms();
 }
-add_action( 'kct_after_entry_content', 'baca_after_entry_content' );
+add_action( 'kct_after_entry_content', 'baca_after_singular_content' );
 
 
 function baca_comments_list() {

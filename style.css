@@ -538,7 +538,8 @@ td, th {
 }
 
 .entry-terms, .entry-pages {clear:both}
-.entry-terms p {margin-bottom:0;}
+.entry-terms dt {font-size:1em;}
+.entry-terms dd {margin-bottom:0;}
 .entry-terms .label, .entry-pages .label {font-weight:bold}
 
 

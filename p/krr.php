@@ -97,12 +97,13 @@ function kct_paginate_links( $query = null, $echo = true ) {
 /**
  * Get post terms
  *
- * @param $post_object Post object, either from global $post variable or using the get_post() function
- * @return array Post meta array
+ * @param $post_object object Post object, either from global $post variable or using the get_post() function
+ * @param $echo bool
+ * @return array Post terms
  *
  */
 
-function kct_post_terms( $post_object = '' ) {
+function kct_post_terms( $post_object = '', $echo = true ) {
 	if ( is_404() )
 		return;
 
@@ -114,7 +115,7 @@ function kct_post_terms( $post_object = '' ) {
 	if ( !is_object($post_object) )
 		return false;
 
-	$output = array();
+	$terms = array();
 	$taxonomies = get_taxonomies( array(
 		'public'			=> true,
 		'object_type'	=> array($post_object->post_type)
@@ -125,11 +126,22 @@ function kct_post_terms( $post_object = '' ) {
 
 	foreach ( $taxonomies as $taxonomy ) {
 		$label = apply_filters( "kct_post_terms_tax_label_{$taxonomy->name}", $taxonomy->label );
-		if ( $post_tems = get_the_term_list($post_object->ID, $taxonomy->name, "<span class='label'>{$label}:</span> ", ', ') )
-			$output[$taxonomy->name] = $post_tems;
+		if ( $post_tems = get_the_term_list($post_object->ID, $taxonomy->name, '', ', ') )
+			$terms[$taxonomy->name] = array('label' => $label , 'terms' => $post_tems);
 	}
 
-	return apply_filters( 'kct_post_meta', $output );
+	$terms = apply_filters( 'kct_post_meta', $terms );
+	if ( !$echo )
+		return $terms;
+
+	$out  = "<dl class='entry-terms'>\n";
+	foreach ( $terms as $tax => $tax_terms ) {
+		$out .= "\t<dt class='label {$tax}'>{$tax_terms['label']}:</dt>\n";
+		$out .= "\t<dd class='terms {$tax}'>{$tax_terms['terms']}</dd>\n";
+	}
+	$out .="</dl>\n";
+
+	echo $out;
 }
 
 
@@ -191,4 +203,5 @@ function kct_comment_form_fields( $fields ) {
 	return $fields;
 }
 add_filter( 'comment_form_default_fields', 'kct_comment_form_fields' );
+
 
