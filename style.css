@@ -570,7 +570,7 @@ td, th {
 .comment .children {
 	padding-left:60px;}
 .comment-content {
-	font-size:12px;
+	font-size:.857em;
 	margin-bottom:2.5em;
 }
 .commentmetadata {display:inline-block;}
@@ -584,6 +584,13 @@ td, th {
 	margin-top:5px;
 }
 .comment-content p {margin-bottom:1em;}
+
+#pingslist {
+	padding-left:1.5em;
+	list-style:disc;
+	font-size:.857em;
+}
+
 
 #respond {margin-bottom:2.5em;}
 .comment #respond {padding-left:60px;}

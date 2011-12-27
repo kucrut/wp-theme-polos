@@ -10,18 +10,11 @@
 	</div><!-- #comments -->
 	<?php return; } ?>
 
-	<?php if ( have_comments() ) { ?>
-		<h2 id="comments-title"><?php _e('Comments') ?></h2>
-
-		<?php do_action( 'kct_before_comments_list' ) ?>
-
-		<ol class="commentlist">
-			<?php wp_list_comments( array('callback' => 'kct_comments_list', 'type' => 'comment') ); ?>
-		</ol>
-
-		<?php do_action( 'kct_after_comments_list' ) ?>
-
-	<?php } elseif ( !comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments') ) { ?>
+	<?php
+		if ( have_comments() ) {
+			kct_response_list( get_the_ID() );
+		}
+		elseif ( !comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments') ) { ?>
 		<p class="nocomments"><?php _e( 'Comments are closed.', 'baca' ); ?></p>
 	<?php } ?>
 

@@ -175,9 +175,29 @@ function kct_get_comments_count( $post_id = 0, $type = '' ) {
 
 
 /**
+ * Response list (comments & pings)
+ */
+function kct_response_list( $post_id = 0 ) {
+	foreach ( array('comment' => __('Comments'), 'pings' => __('Pings')) as $type => $title ) {
+		if ( !kct_get_comments_count($post_id, $type) )
+			continue; ?>
+	<h2 id="<?php echo $type ?>-title"><?php echo $title ?></h2>
+	<?php do_action( "kct_before_{$type}_list" ) ?>
+
+	<ol id="<?php echo $type ?>list" class="responselist">
+		<?php wp_list_comments( array('callback' => "kct_{$type}_list", 'type' => $type) ); ?>
+	</ol>
+
+	<?php do_action( "kct_after_{$type}_list" ) ?>
+
+	<?php }
+}
+
+
+/**
  * Comments list
  */
-function kct_comments_list( $comment, $args, $depth ) {
+function kct_comment_list( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment; ?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<article id="comment-<?php comment_ID(); ?>" class="comment-item">
@@ -209,6 +229,15 @@ function kct_comments_list( $comment, $args, $depth ) {
 		</article>
 	<?php
 }
+
+
+/**
+ * Pings list
+ */
+function kct_pings_list( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment; ?>
+	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php comment_author_link(); ?><?php edit_comment_link( __('Edit'), ' | ' ); ?>
+<?php }
 
 
 /**
