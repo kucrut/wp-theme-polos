@@ -130,7 +130,8 @@ textarea {
 	resize:vertical}
 input:valid, textarea:valid {}
 input:invalid, textarea:invalid {}
-
+::-webkit-input-placeholder {color:#ddd}
+:-moz-placeholder {color:#ccc;font-style:italic}
 
 /*** Start here ***/
 body {
@@ -356,9 +357,10 @@ td, th {
 	position:absolute;
 	right:0;
 	line-height:1;
-	top:15px;
+	bottom:25px;
+	text-align:right;
 }
-.main-menu { text-align:right; }
+.main-menu-container ul {margin:0;}
 .main-menu li {
 	display:inline-block;
 	position:relative;
@@ -662,6 +664,31 @@ td, th {
 .widget li:before {content:'\00bb\00a0'}
 
 
+/* Searchform */
+#searchform {
+	width:200px;
+	position:absolute;
+	right:.75em;
+	top:20px;
+}
+#s {
+	font-size:.857em;
+	width:160px;
+	float:right;
+	padding-right:1.75em;
+}
+#searchsubmit {border:0}
+#searchsubmit span {display:none;}
+#searchsubmit {
+	padding:0;
+	margin:0;
+	position:absolute;
+	right:5px;
+	top:.25em;
+	z-index:5;
+}
+
+
 /* Small screens */
 @media only screen and (max-width: 880px) {
 	body {background:none}
@@ -695,6 +722,7 @@ td, th {
 
 	.widget {width:30%;margin-right:5%}
 }
+
 @media only screen and (width: 320px) {
 	.widget {float:none;width:100%;margin:0}
 }
@@ -712,7 +740,7 @@ td, th {
 .hidden { display: none !important; visibility: hidden; }
 
 /* Hide only visually, but have it available for screenreaders: h5bp.com/v */
-.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden, .assistive-text { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
 
 /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
 .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }

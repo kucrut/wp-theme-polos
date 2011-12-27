@@ -66,7 +66,7 @@ function after_entry_title_single( $post_id ) {
 
 	$out  = '<p class="entry-data">';
 	$out .= '<abbr class="date" title="'.sprintf(__('Posted on %1$s', 'baca'), esc_attr(get_the_date('r')) ).'">'.get_the_date().'</abbr>';
-	if ( comments_open() && ! post_password_required() )
+	if ( (comments_open() || kct_get_comments_count(get_the_ID(), 'comment')) && !post_password_required() )
 		$out .= ' <a href="'.get_comments_link().'">'.__('Comments', 'baca').'</a>';
 	if ( $edit_link = get_edit_post_link() )
 		$out .= ' <a href="'.$edit_link.'">'.__('Edit', 'baca').'</a>';
@@ -75,6 +75,10 @@ function after_entry_title_single( $post_id ) {
 	echo $out;
 }
 add_action( 'kct_after_entry_title', 'after_entry_title_single' );
+
+
+# Searchform on #branding
+add_action( 'branding_after', 'get_search_form' );
 
 
 # Replace parent menu item without URL with <span />
