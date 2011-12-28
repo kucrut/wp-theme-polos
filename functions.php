@@ -144,7 +144,7 @@ add_action( 'kct_after_entry_content', 'baca_after_singular_content' );
 
 
 function baca_comments_list() {
-	if ( !is_singular() || (!get_comments_number() && !comments_open()) )
+	if ( !is_singular() )
 		return;
 
 	comments_template('', true);

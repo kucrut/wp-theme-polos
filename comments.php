@@ -14,7 +14,8 @@
 		if ( have_comments() ) {
 			kct_response_list( get_the_ID() );
 		}
-		elseif ( !comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments') ) { ?>
+
+		if ( !comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments') && get_comments_number() ) { ?>
 		<p class="nocomments"><?php _e( 'Comments are closed.', 'baca' ); ?></p>
 	<?php } ?>
 
