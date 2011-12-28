@@ -61,12 +61,27 @@ function baca_sidebars() {
 }
 
 
-function after_entry_title_single( $post_id ) {
+function baca_entry_data( $post_id ) {
 	if ( is_404() || is_page() )
 		return;
 
+	$title = get_the_title('', false);
+	$dtag = empty($title) ? 'a' : 'abbr';
+	$time = esc_attr( get_the_date(_x('r', 'yearly archives date format', 'baca')) );
+	$date = "<{$dtag} class='date' title='{$time}'";
+	if ( !$title )
+		$date .= " href='".get_permalink()."'";
+	$date .= ">".get_the_date()."</{$dtag}>";
+
+	if ( is_multi_author() ) {
+		$author = '<a class="the-author" href="'.esc_url(get_author_posts_url(get_the_author_meta('ID'))).'" title="'.esc_attr(sprintf(__('View all posts by %s', 'baca'), get_the_author())).'">'.get_the_author().'</a>';
+		$byline = sprintf( __('Posted by %1$s on %2$s', 'baca'), $author, $date);
+	} else {
+		$byline = sprintf( __('Posted on %s', 'baca'), $date );
+	}
+
 	$out  = '<p class="entry-data">';
-	$out .= '<abbr class="date" title="'.sprintf(__('Posted on %1$s', 'baca'), esc_attr(get_the_date('r')) ).'">'.get_the_date().'</abbr>';
+	$out .= $byline;
 	if ( (comments_open() || kct_get_comments_count(get_the_ID(), 'comment')) && !post_password_required() )
 		$out .= ' <a href="'.get_comments_link().'">'.__('Comments', 'baca').'</a>';
 	if ( $edit_link = get_edit_post_link() )
@@ -75,7 +90,7 @@ function after_entry_title_single( $post_id ) {
 
 	echo $out;
 }
-add_action( 'kct_after_entry_title', 'after_entry_title_single' );
+add_action( 'kct_after_entry_title', 'baca_entry_data' );
 
 
 # Searchform on #branding

@@ -143,7 +143,8 @@ body {
 a, a:link,
 button:focus, button:hover,
 input[type="submit"]:focus, input[type="submit"]:hover,
-input[type="button"]:focus, input[type="button"]:hover {
+input[type="button"]:focus, input[type="button"]:hover,
+.entry-data .the-author {
 	text-decoration:none;
 	color:#dd4614;
 }
@@ -151,7 +152,9 @@ a:visited {color:#fe8771}
 a:focus, a:hover {text-decoration:underline}
 a:active, button:active,
 input[type="submit"]:active,
-input[type="button"]:active {
+input[type="button"]:active,
+.entry-title a:focus,
+.entry-title a:hover  {
 	color:#c00303 !important;
 	text-decoration:none
 }
@@ -294,8 +297,6 @@ td, th {
 }
 #branding a:focus,
 #branding a:hover,
-.entry-title a:focus,
-.entry-title a:hover,
 .menu .parent:focus,
 .menu .parent:hover,
 .posts-nav a:focus,
@@ -510,11 +511,10 @@ td, th {
 .hentry {margin-bottom:30px;}
 .entry-title {margin-bottom:1em;}
 .entry-title h1 {margin:0 0 .1em;}
-.entry-data {
-	color:#555;
-	word-spacing:.15em
-}
+.entry-data {color:#555;}
 .entry-data a:before { content:'| '; color:#555}
+a.date {cursor:pointer}
+.entry-data .date:before, .entry-data a.the-author:before {content:''}
 .entry-content ol, .entry-content ul,
 .comment-content ol, .comment-content ul {
 	padding-left:1.65em;}
