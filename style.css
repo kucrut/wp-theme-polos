@@ -540,6 +540,7 @@ a.date {cursor:pointer}
 	max-width:calc(100% - 10px);
 }
 
+.sticky {}
 
 .posts-nav {
 	clear:both;
@@ -649,7 +650,10 @@ a.date {cursor:pointer}
 #cancel-comment-reply-link {font-size:80%}
 .depth-4 #commentform textarea,
 .depth-4 .form-allowed-tags {
-	width:410px;}
+	width:410px;
+}
+
+.bypostauthor {}
 
 .kc-contact textarea {height:120px;}
 .kc-contact .submit {padding-left:80px;}
