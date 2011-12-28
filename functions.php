@@ -97,9 +97,25 @@ function baca_page_title() {
 	if ( is_search() && $title = get_search_query() )
 		$title = sprintf(__('Search results for %s', 'baca'), "<span class='q'>{$title}</span>");
 
-	# Categories / tags / terms page
-	elseif ( (is_category() || is_tag() || is_tax()) && $title = single_term_title('', false) )
+	# Categories / terms archive
+	elseif ( (is_category() || is_tax()) && $title = single_term_title('', false) )
 		$title = sprintf(__('Entries filed under %s', 'baca'), "<span class='q'>{$title}</span>");
+
+	# Tags archive
+	elseif ( is_tag() && $title = single_term_title('', false) )
+		$title = sprintf(__('Entries tagged %s', 'baca'), "<span class='q'>{$title}</span>");
+
+	# Daily archive
+	elseif ( is_day() )
+		$title = sprintf(__('Daily archives: %s', 'baca'), get_the_date());
+
+	# Monthly archive
+	elseif ( is_month() )
+		$title = sprintf(__('Monthly archives: %s', 'baca'), get_the_date(_x('F Y', 'monthly archives date format', 'baca')));
+
+	# Yearly archive
+	elseif ( is_year() )
+		$title = sprintf(__('Yearly archives: %s', 'baca'), get_the_date(_x('Y', 'yearly archives date format', 'baca')));
 
 	if ( isset($title) && !empty($title) ) { ?>
 	<hgroup class="page-title">
