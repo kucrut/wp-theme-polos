@@ -62,7 +62,7 @@ function baca_sidebars() {
 
 
 function baca_entry_data( $post_id ) {
-	if ( is_page() || !have_posts() || is_404() )
+	if ( is_page() || is_404() )
 		return;
 
 	$title = get_the_title('', false);
