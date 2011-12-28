@@ -135,8 +135,8 @@ input:invalid, textarea:invalid {}
 
 /*** Start here ***/
 body {
- 	background:#f2f2ee url('i/bg-light.png'); /* Light */
-/* 	background:#151515 url('i/bg-dark.png'); */ /* Dark */
+	background:#151515 url('i/bg-dark.png'); /* Dark */
+/* background:#f2f2ee url('i/bg-light.png'); */ /* Light */
 	color:#333;
 	font:14px/1.6 sans-serif;
 }
