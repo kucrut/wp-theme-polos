@@ -78,7 +78,7 @@ add_action( 'kct_after_entry_title', 'after_entry_title_single' );
 
 
 # Searchform on #branding
-add_action( 'branding_after', 'get_search_form' );
+add_action( 'kct_after_branding', 'get_search_form' );
 
 
 # Replace parent menu item without URL with <span />
@@ -89,6 +89,25 @@ function baca_menu_filter( $item_output, $item, $depth, $args ) {
 	return $item_output;
 }
 add_filter( 'walker_nav_menu_start_el', 'baca_menu_filter', 11, 4 );
+
+
+/* Page title */
+function baca_page_title() {
+	# Search result page
+	if ( is_search() && $title = get_search_query() )
+		$title = sprintf(__('Search results for %s', 'baca'), "<span class='q'>{$title}</span>");
+
+	# Categories / tags / terms page
+	elseif ( (is_category() || is_tag() || is_tax()) && $title = single_term_title('', false) )
+		$title = sprintf(__('Entries filed under %s', 'baca'), "<span class='q'>{$title}</span>");
+
+	if ( isset($title) && !empty($title) ) { ?>
+	<hgroup class="page-title">
+		<h1><?php echo $title ?></h1>
+	</hgroup>
+	<?php }
+}
+add_action( 'kct_before_loop', 'baca_page_title' );
 
 
 /* Post meta */

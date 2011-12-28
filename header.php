@@ -27,7 +27,7 @@ $lang_attr = ob_get_clean();
 <body <?php body_class() ?>>
 	<div id="page">
 		<header id="branding" role="banner">
-			<?php do_action( 'branding_before' ) ?>
+			<?php do_action( 'kct_before_branding' ) ?>
 			<hgroup>
 				<h1 id="site-title"><a class="no-ajaxy" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php if ( $site_desc = get_bloginfo('description') ) { ?>
@@ -42,5 +42,5 @@ $lang_attr = ob_get_clean();
 				'menu_class'			=> 'menu main-menu',
 				'fallback_cb'			=> false
 			) ); ?>
-			<?php do_action( 'branding_after' ) ?>
+			<?php do_action( 'kct_after_branding' ) ?>
 		</header>
