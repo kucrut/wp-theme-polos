@@ -212,7 +212,7 @@ h1,h2,h3,h4,h5,h6, blockquote cite, label, address,
 sub, sup, dt, th,
 button, input[type="submit"], input[type="button"],
 .menu, #colophon .nw, .widget-title,
-.wp-caption-text, .entry-data,
+.wp-caption-text, .gallery-caption, .entry-data,
 .posts-nav, .entry-terms, .entry-pages,
 .comment footer, .form-allowed-tags,
 .comment-notes, .logged-in-as {
@@ -273,7 +273,7 @@ td, th {
 	float:right;
 	margin:.5em 1em 0 .5em;
 }
-.wp-caption-text {
+.wp-caption-text, .gallery-caption {
 	text-align:center;
 	line-height:1.15;
 }
@@ -715,7 +715,7 @@ td, th {
 	.main-menu .sub-menu:before {display:none !important}
 
 	h1 {font-size:1.6em}
-	.wp-caption {max-width:99% !important}
+	.wp-caption, .gallery-caption {max-width:99% !important}
 	.entry-content img, .entry-content a img {max-width:95% !important;}
 	#commentform label {float:none;width:auto;display:inline:block}
 	#commentform input, #commentform textarea {display:block; width:95%;margin:0 auto}
@@ -786,7 +786,7 @@ td, th {
 
   body {background:#fff}
   #page {background:#fff;border:0;width:auto;margin:0}
-  #site-title a:after, .entry-pages a:after, .entry-terms a:after, .singular .entry-title a:after, .wp-caption a:after {content:''}
+  #site-title a:after, .entry-pages a:after, .entry-terms a:after, .singular .entry-title a:after, .wp-caption a:after, .gallery-caption a:after {content:''}
   .singular #branding, .menu-container,
 	.posts-nav, .entry-data a {
 		display:none;}
