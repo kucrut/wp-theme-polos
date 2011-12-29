@@ -5,13 +5,11 @@
  * @version 0.2
  */
 
-
+# The mini-lib
 require_once get_template_directory() . '/p/krr.php';
 
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
+# Set the content width based on the theme's design and stylesheet.
 if ( ! isset( $content_width ) )
 	$content_width = 750;
 
@@ -109,7 +107,7 @@ function polos_menu_filter( $item_output, $item, $depth, $args ) {
 add_filter( 'walker_nav_menu_start_el', 'polos_menu_filter', 11, 4 );
 
 
-/* Page title */
+# Page title
 function polos_page_title() {
 	# Search result page
 	if ( is_search() && $title = get_search_query() )
@@ -144,7 +142,7 @@ function polos_page_title() {
 add_action( 'kct_before_loop', 'polos_page_title' );
 
 
-/* Post meta */
+# Post meta
 function polos_after_singular_content() {
 	if ( !is_singular() )
 		return;
