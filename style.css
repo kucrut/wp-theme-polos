@@ -681,16 +681,19 @@ a.date {cursor:pointer}
 #searchform {
 	width:190px;
 	height:2em;
+	position:relative;
+}
+#branding #searchform {
 	position:absolute;
 	right:.75em;
 	top:20px;
 }
 #s {
-	font-size:.857em;
 	width:160px;
 	float:right;
 	padding-right:1.75em;
 }
+#branding #s {font-size:.857em}
 #searchsubmit {border:0}
 #searchsubmit span {display:none;}
 #searchsubmit {
