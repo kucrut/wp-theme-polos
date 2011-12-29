@@ -19,9 +19,16 @@ if ( ! isset( $content_width ) )
 # Setup
 if ( !function_exists('polos_setup') ) {
 	function polos_setup() {
-		register_nav_menus(array(
-			'main'		=> __( 'Main Menu', 'polos' )
-		));
+		# i18n
+		load_theme_textdomain( 'polos', get_template_directory() . '/l' );
+
+		$locale = get_locale();
+		$locale_file = get_template_directory() . "/languages/$locale.php";
+		if ( is_readable($locale_file) )
+			require_once( $locale_file );
+
+		# Menus
+		register_nav_menus( array('main'=> __('Main Menu', 'polos')) );
 
 		# Features
 		add_theme_support( 'automatic-feed-links' );
