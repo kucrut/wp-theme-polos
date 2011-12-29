@@ -2,7 +2,7 @@
 
 /**
  * @package Polos_Theme
- * @version 0.2
+ * @version 0.3
  */
 
 

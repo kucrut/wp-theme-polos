@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @package Baca_Theme
- * @version 0.1
+ * @package Polos_Theme
+ * @version 0.3
  */
 
 
