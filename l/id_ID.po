@@ -1,0 +1,179 @@
+# Copyright (C) 2010 Polos
+# This file is distributed under the same license as the Polos package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Polos 0.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/polos\n"
+"POT-Creation-Date: 2011-12-29 03:06:48+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2011-12-29 11:20+0800\n"
+"Last-Translator: Dzikri Aziz <dzikri.aziz@gmail.com>\n"
+"Language-Team: \n"
+"X-Poedit-Language: Indonesian\n"
+
+#: comments.php:10
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Berikan password untuk membaca komentar."
+
+#: comments.php:19
+msgid "Comments are closed."
+msgstr "Komentar ditutup."
+
+#: content.php:20
+msgid "Continue&hellip;"
+msgstr "Selengkapnya&hellip;"
+
+#: content-404.php:10
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "Aduh :("
+
+#: content-404.php:11
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help :)"
+msgstr "Halaman yang Anda tuju tidak dapat ditemukan. Gunakan kolom pencarian di pojok kanan atas untuk mencari artikel yang anda inginkan."
+
+#: content-404.php:14
+msgid "Nothing Found"
+msgstr "Kosong"
+
+#: content-404.php:15
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr "Maaf, kategori ini masih kosong. Gunakan kolom pencarian di pojok kanan atas untuk mencari artikel yang anda inginkan."
+
+#: functions.php:26
+msgid "Main Menu"
+msgstr "Menu Utama"
+
+#: functions.php:56
+msgid "Bottom Widget Area"
+msgstr "Wilayah Widget Bawah"
+
+#: functions.php:72
+msgctxt "yearly archives date format"
+msgid "r"
+msgstr "r"
+
+#: functions.php:79
+msgid "View all posts by %s"
+msgstr "Lihat semua tulisan %s"
+
+#: functions.php:80
+msgid "Posted by %1$s on %2$s"
+msgstr "Ditulis oleh %1$s pada %2$s"
+
+#: functions.php:82
+msgid "Posted on %s"
+msgstr "Ditulis pada %s"
+
+#: functions.php:88
+#: p/krr.php:198
+msgid "Comments"
+msgstr "Komentar"
+
+#: functions.php:90
+#: p/krr.php:235
+#: p/krr.php:256
+msgid "Edit"
+msgstr "Sunting"
+
+#: functions.php:116
+msgid "Search results for %s"
+msgstr "Hasil pencarian untuik %s"
+
+#: functions.php:120
+msgid "Entries filed under %s"
+msgstr "Tulisan dalam kategori %s"
+
+#: functions.php:124
+msgid "Entries tagged %s"
+msgstr "Tulisan dengan tag %s"
+
+#: functions.php:128
+msgid "Daily archives: %s"
+msgstr "Arsip harian: %s"
+
+#: functions.php:132
+msgid "Monthly archives: %s"
+msgstr "Arsip bulanan: %s"
+
+#: functions.php:132
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: functions.php:136
+msgid "Yearly archives: %s"
+msgstr "Arsip tahunan: %s"
+
+#: functions.php:136
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: functions.php:153
+msgid "Pages"
+msgstr "Halaman"
+
+#: functions.php:177
+msgid "Comment navigation"
+msgstr "Navigasi komentar"
+
+#: searchform.php:2
+#: searchform.php:3
+#: searchform.php:4
+msgid "Search"
+msgstr "Cari"
+
+#: p/krr.php:21
+msgid "Go back"
+msgstr "Kembali"
+
+#: p/krr.php:63
+msgid "Page %s"
+msgstr "Halaman %s"
+
+#: p/krr.php:198
+msgid "Pings"
+msgstr "Umpan balik"
+
+#: p/krr.php:228
+msgid "%1$s at %2$s"
+msgstr "%1$s pada %2$s"
+
+#: p/krr.php:242
+msgid "Your comment is awaiting moderation."
+msgstr "Komentar anda sedang menunggu pemeriksaan."
+
+#: p/krr.php:271
+msgid "Name"
+msgstr "Nama"
+
+#: p/krr.php:273
+msgid "Email"
+msgstr "Email"
+
+#: p/krr.php:275
+msgid "Website"
+msgstr "Website"
+
+#. Theme Name of the plugin/theme
+msgid "Polos"
+msgstr "Polos"
+
+#. Description of the plugin/theme
+msgid "A minimalist black on white theme."
+msgstr "Tema hitam-putih minimalis"
+
+#. Author of the plugin/theme
+msgid "kucrut"
+msgstr "kucrut"
+
+#. Author URI of the plugin/theme
+msgid "http://kucrut.org/"
+msgstr "http://kucrut.org/"
+
+#. Tags of the plugin/theme
+msgid "white, one-column"
+msgstr "putih, satu-kolom"
+
