@@ -22,11 +22,6 @@ if ( !function_exists('polos_setup') ) {
 		# i18n
 		load_theme_textdomain( 'polos', get_template_directory() . '/l' );
 
-		$locale = get_locale();
-		$locale_file = get_template_directory() . "/languages/$locale.php";
-		if ( is_readable($locale_file) )
-			require_once( $locale_file );
-
 		# Menus
 		register_nav_menus( array('main'=> __('Main Menu', 'polos')) );
 
