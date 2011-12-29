@@ -25,7 +25,6 @@ if ( !function_exists('baca_setup') ) {
 
 		# Features
 		add_theme_support( 'automatic-feed-links' );
-		add_theme_support( 'post-thumbnails' );
 		add_custom_background();
 
 		add_action( 'widgets_init', 'baca_sidebars' );
