@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package Baca_Theme
+ * @package Polos_Theme
  * @version 0.1
  */
 

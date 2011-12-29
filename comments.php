@@ -1,8 +1,10 @@
 <?php
+
 /**
- * @package Baca_Theme
+ * @package Polos_Theme
  * @version 0.1
  */
+
 ?>
 
 	<?php if ( post_password_required() ) { ?>
