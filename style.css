@@ -566,8 +566,8 @@ a.date {cursor:pointer}
 
 
 /* Comments */
-#comments { margin-top:3em; }
-#comments-title { margin-bottom:.75em;}
+#comments {margin-top:3em;}
+#comments-title {margin-bottom:.75em;}
 .comment footer {
 	overflow:hidden;
 	height:52px;
