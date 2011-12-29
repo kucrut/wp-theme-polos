@@ -491,6 +491,7 @@ td, th {
 #colophon .nw {
 	margin:0;
 	font-style:italic;
+	line-height:1.25;
 	width:45%;
 }
 #colophon .cl {float:left}
