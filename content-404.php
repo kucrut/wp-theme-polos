@@ -7,12 +7,12 @@
 
 
 if ( is_404() ) {
-	$title = __('This is somewhat embarrassing, isn&rsquo;t it?', 'baca');
-	$info = __('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help :)', 'baca');
+	$title = __('This is somewhat embarrassing, isn&rsquo;t it?', 'polos');
+	$info = __('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help :)', 'polos');
 }
 else {
-	$title = __('Nothing Found', 'baca');
-	$info = __('Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'baca');
+	$title = __('Nothing Found', 'polos');
+	$info = __('Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'polos');
 }
 ?>
 
