@@ -158,6 +158,7 @@ function baca_after_singular_content() {
 add_action( 'kct_after_entry_content', 'baca_after_singular_content' );
 
 
+# Responses list (comments & pings)
 function baca_comments_list() {
 	if ( !is_singular() )
 		return;
@@ -166,5 +167,16 @@ function baca_comments_list() {
 }
 add_action( 'kct_after_entry_content', 'baca_comments_list' );
 
+
+# Comments nav
+function baca_comments_nav() {
+	if ( get_comment_pages_count() > 1 && get_option('page_comments') ) { ?>
+		<nav class="posts-nav">
+			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'baca' ); ?></h1>
+			<?php paginate_comments_links( array('type' => 'list') ) ?>
+		</nav>
+	<?php }
+}
+add_action( 'kct_after_comment_list', 'baca_comments_nav' );
 
 ?>
