@@ -116,7 +116,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 	cursor:pointer;
 	-webkit-appearance:button;
 	*overflow:visible}
-input[type="checkbox"], input[type="radio"] {box-sizing:border-box; padding:0}
+input[type="checkbox"], input[type="radio"] {box-sizing:border-box; padding:0; display:inline-block !important}
 input[type="search"] {
 	-webkit-appearance:textfield;
 	-moz-box-sizing:content-box;
@@ -726,8 +726,8 @@ a.date {cursor:pointer}
 	.wp-caption, .gallery-caption {max-width:99% !important}
 	.entry-content img, .entry-content a img {max-width:95% !important;}
 	#commentform label {float:none;width:auto;display:inline:block}
-	#commentform input, #commentform textarea {display:block; width:95%;margin:0 auto}
-	.form-allowed-tags, .form-submit {padding-left:0;width:auto !important}
+	#commentform input[type="text"], #commentform textarea {display:block; width:95%;margin:0 auto}
+	.form-allowed-tags, .form-submit, #commentform .comment-subscription-form {padding-left:0;width:auto !important}
 	.comment footer {height:auto;line-height:1.2;overflow:visible}
 	.comment-content {clear:both}
 	.comment-content, .comment #respond {padding-left:0}
