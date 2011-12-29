@@ -737,7 +737,8 @@ a.date {cursor:pointer}
 	.commentmetadata:after {display:none;}
 
 	.widget {width:30%;margin-right:5%}
-	#searchform {position:relative;right:auto;top:auto;margin:1.5em 0 1em}
+	#branding #searchform {position:relative;right:auto;top:auto;margin:1.5em 0 1em}
+	#branding #s {font-size:1em}
 }
 
 @media only screen and (width: 320px) {
