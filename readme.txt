@@ -9,4 +9,5 @@ either create a child theme and add the css fixes for IE, or simply don't use it
 
 == Credits ==
 * The whole WordPress and web dev community
+* [Libertine Open Fonts Projekt] (http://www.linuxlibertine.org/)
 * DevPress' [Dotos] (http://devpress.com/themes/dotos/) theme for the background image
