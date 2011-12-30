@@ -45,10 +45,20 @@ function kct_body_class( $classes ) {
 add_filter( 'body_class', 'kct_body_class' );
 
 
+/**
+ * Some more body classes
+ */
+function kct_post_class( $classes, $class, $post_id ) {
+	if ( current_theme_supports('post-thumbnails') && has_post_thumbnail() )
+		$classes[] = 'has-post-thumbnail';
 
-/*
+	return $classes;
+}
+add_filter( 'post_class', 'kct_post_class', 10, 3 );
+
+
+/**
  * Document title (<title></title>)
- *
  */
 function kct_doc_title( $title ) {
 	global $page, $paged;
