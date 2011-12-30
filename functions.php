@@ -133,10 +133,23 @@ function polos_page_title() {
 	elseif ( is_year() )
 		$title = sprintf(__('Yearly archives: %s', 'polos'), get_the_date(_x('Y', 'yearly archives date format', 'polos')));
 
+	# Author archive
+	elseif ( is_author() )
+		$title = sprintf(__('Entries posted by %s', 'polos'), get_the_author_meta('display_name', get_query_var('author')));
+
+	# Custom post type archive
+	elseif ( is_post_type_archive() ) {
+		$object = get_post_type_object( get_query_var('post_type') );
+		$title = $object->label;
+		$desc = $object->description;
+	}
+
+
 	if ( isset($title) && !empty($title) ) { ?>
-	<hgroup class="page-title">
+	<header class="page-title">
 		<h1><?php echo $title ?></h1>
-	</hgroup>
+		<?php if ( isset($desc) && !empty($desc) ) echo wpautop( $desc ); ?>
+	</header>
 	<?php }
 }
 add_action( 'kct_before_loop', 'polos_page_title' );

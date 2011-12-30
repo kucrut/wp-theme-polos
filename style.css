@@ -502,10 +502,8 @@ td, th {
 
 /*** Content ***/
 #content {}
-.page-title h1 {
-	font-size:1.5em;
-	margin-bottom:1em;
-}
+.page-title {margin-bottom:2em;}
+.page-title h1 {font-size:1.5em;}
 .hentry {margin-bottom:30px;}
 .entry-title {margin-bottom:1em;}
 .entry-title h1 {margin:0 0 .1em;}
