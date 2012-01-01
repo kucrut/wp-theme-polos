@@ -154,15 +154,15 @@ function kct_post_terms( $post_object = '', $echo = true ) {
 		return false;
 
 	$terms = array();
-	$taxonomies = get_taxonomies( array(
-		'public'			=> true,
-		'object_type'	=> array($post_object->post_type)
-	), 'objects' );
+	$taxonomies = get_object_taxonomies( $post_object->post_type, 'objects' );
 
 	if ( !is_array($taxonomies) || empty($taxonomies) )
 		return false;
 
 	foreach ( $taxonomies as $taxonomy ) {
+		if ( !$taxonomy->public )
+			continue;
+
 		$label = apply_filters( "kct_post_terms_tax_label_{$taxonomy->name}", $taxonomy->label );
 		if ( $post_tems = get_the_term_list($post_object->ID, $taxonomy->name, '', ', ') )
 			$terms[$taxonomy->name] = array('label' => $label , 'terms' => $post_tems);
