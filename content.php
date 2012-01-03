@@ -9,9 +9,12 @@
 				<?php do_action( 'kct_before_entry' ); ?>
 				<article id="post-<?php the_ID() ?>" <?php post_class() ?>>
 					<header class="entry-title">
-						<?php if ( $title = get_the_title() ) { ?>
-						<h1><a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><?php the_title() ?></a></h1>
-						<?php } ?>
+						<?php
+							if ( $title = get_the_title() ) {
+								$title = is_singular() ? "<h1>{$title}</h1>\n" : "<h1><a href='".get_permalink()."' title='".the_title_attribute(array('echo' => false))."'>{$title}</a></h1>\n";
+								echo apply_filters( 'kct_entry_title', $title );
+							}
+						?>
 						<?php do_action( 'kct_after_entry_title' ); ?>
 					</header>
 
