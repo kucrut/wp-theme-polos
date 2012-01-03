@@ -14,12 +14,13 @@
 			if ( have_posts() ) {
 				while ( have_posts() ) {
 					the_post();
-					get_template_part( 'content', get_post_type() );
+					get_template_part( 'content', apply_filters('kct_content_template', get_post_type()) );
 				}
 
 				kct_paginate_links();
-			} else {
-				get_template_part( 'content', '404' );
+			}
+			else {
+				get_template_part( 'content', apply_filters('kct_content_template', '404') );
 			}
 		?>
 		<?php do_action( 'kct_after_loop' ) ?>
