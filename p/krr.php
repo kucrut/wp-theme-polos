@@ -87,7 +87,8 @@ function kct_doc_title( $title ) {
 
 	return $title;
 }
-add_filter( 'wp_title', 'kct_doc_title' );
+if ( !defined('WPSEO_VERSION') )
+	add_filter( 'wp_title', 'kct_doc_title' );
 
 
 # <head /> stuff
