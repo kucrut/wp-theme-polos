@@ -82,7 +82,9 @@ function polos_entry_data( $post_id ) {
 
 	$out  = '<p class="entry-data">';
 	$out .= $byline;
-	if ( (comments_open() || kct_get_comments_count(get_the_ID(), 'comment')) && !post_password_required() )
+	if ( post_type_supports(get_post_type(), 'comments')
+			&& (comments_open() || kct_get_comments_count(get_the_ID(), 'comment'))
+			&& !post_password_required() )
 		$out .= ' <a href="'.get_comments_link().'">'.__('Comments', 'polos').'</a>';
 	if ( $edit_link = get_edit_post_link() )
 		$out .= ' <a href="'.$edit_link.'">'.__('Edit', 'polos').'</a>';
