@@ -173,10 +173,8 @@ add_action( 'kct_after_entry_content', 'polos_after_singular_content' );
 
 # Responses list (comments & pings)
 function polos_comments_list() {
-	if ( !is_singular() )
-		return;
-
-	comments_template('', true);
+	if ( is_singular() && post_type_supports(get_post_type(), 'comments') )
+		comments_template('', true);
 }
 add_action( 'kct_after_entry_content', 'polos_comments_list' );
 
