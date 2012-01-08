@@ -333,6 +333,7 @@ td, th {
 	position:relative;
 	padding:5px 0 25px;
 	margin-bottom:20px;
+	z-index:5;
 }
 #site-title {
 	font-size:3em;
