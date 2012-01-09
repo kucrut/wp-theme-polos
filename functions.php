@@ -111,6 +111,8 @@ add_filter( 'walker_nav_menu_start_el', 'polos_menu_filter', 11, 4 );
 
 # Page title
 function polos_page_title() {
+	$title = $desc = '';
+
 	# Search result page
 	if ( is_search() && $title = get_search_query() )
 		$title = sprintf(__('Search results for %s', 'polos'), "<span class='q'>{$title}</span>");
@@ -146,11 +148,13 @@ function polos_page_title() {
 		$desc = $object->description;
 	}
 
+	$title = apply_filters( 'polos_page_title', $title );
+	$desc = apply_filters( 'polos_page_desc', $desc );
 
-	if ( isset($title) && !empty($title) ) { ?>
+	if ( !empty($title) ) { ?>
 	<header class="page-title">
 		<h1><?php echo $title ?></h1>
-		<?php if ( isset($desc) && !empty($desc) ) echo wpautop( $desc ); ?>
+		<?php if ( !empty($desc) ) echo wpautop( $desc ); ?>
 	</header>
 	<?php }
 }
