@@ -158,24 +158,27 @@ input[type="button"]:active,
 	color:#c00303 !important;
 	text-decoration:none
 }
-code, pre, var {
-	color:#1a1a1a;
-	font-family: 'Bitstream Vera Sans Mono', 'Courier New', monospace }
-pre, blockquote {
-	background:#fbfbfb;
-	border:1px solid #c0c0c0;
+code, pre, var { font-family: 'Bitstream Vera Sans Mono', 'Courier New', monospace; }
+code, var {
+	color:#44893c;
+	padding:.1em .3em;
+}
+pre, blockquote, code, var {
 	-webkit-border-radius:3px;
 	-khtml-border-radius:3px;
 	-moz-border-radius:3px;
 	border-radius:3px;
 }
 pre {
+	color:#f8f8f8;
+	background:#212121;
 	line-height:1.5;
 	padding:1em 1.5em;
-	max-height:400px;
 	overflow:auto;
 }
 blockquote {
+	background:#fbfbfb;
+	border:1px solid #c0c0c0;
 	font-family:'Bitstream Vera Serif', 'Georgia', serif;
 	font-style:italic;
 	width:80%;
@@ -263,8 +266,8 @@ td, th {
 	border:1px solid #c0c0c0;
 	padding:.25em 1em;
 }
-.impo {color:#e70d18}
-.ccomment {color:#8f9d6a}
+.impo {color:#ec871d}
+.ccomment {color:#5f5a60}
 
 
 /*** WordPress ***/
