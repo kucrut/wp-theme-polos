@@ -93,8 +93,8 @@ if ( !defined('WPSEO_VERSION') )
 
 # <head /> stuff
 function kct_head_stuff() { ?>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php }
 
@@ -192,9 +192,9 @@ function kct_post_terms( $post_object = '', $echo = true ) {
  */
 function kct_get_comments_count( $post_id = 0, $type = '' ) {
 	return count(get_comments(array(
-		'post_id'	=> $post_id,
-		'status'	=> 'approve',
-		'type'		=> $type
+		'post_id' => $post_id,
+		'status'  => 'approve',
+		'type'    => $type
 	)));
 }
 
@@ -235,10 +235,10 @@ function kct_comment_list( $comment, $args, $depth ) {
 				<div class="comment-meta commentmetadata">
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>" class="comment-date"><?php printf( __( '%1$s at %2$s', 'polos' ), get_comment_date(), get_comment_time() ); ?></a>
 					<?php comment_reply_link( array_merge($args, array(
-						'depth'			=> $depth,
-						'max_depth'	=> $args['max_depth'],
-						'before'		=> '<span class="reply-link"> &ndash; ',
-						'after'			=> '</span>'
+						'depth'     => $depth,
+						'max_depth' => $args['max_depth'],
+						'before'    => '<span class="reply-link"> &ndash; ',
+						'after'     => '</span>'
 					)) ); ?>
 					<?php edit_comment_link( __('Edit', 'polos'), ' &ndash; ' ); ?>
 				</div>
@@ -276,21 +276,13 @@ function kct_comment_form_fields( $fields ) {
 	$req = get_option( 'require_name_email' );
 	$aria_req = ($req ? " aria-required='true'" : '');
 
-	$fields['author']	= '<p class="comment-form-author">' . '<label for="author">' . __('Name', 'polos') . ($req ? ' <span class="required">*</span>' : '')  . '</label>'.
-											'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
-	$fields['email']	= '<p class="comment-form-email"><label for="email">' . __('Email', 'polos') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' .
-											'<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
-	$fields['url']		= '<p class="comment-form-url"><label for="url">' . __('Website', 'polos') . '</label>' .
-											'<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>';
+	$fields['author'] = '<p class="comment-form-author">' . '<label for="author">' . __('Name', 'polos') . ($req ? ' <span class="required">*</span>' : '')  . '</label>'.
+                      '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
+	$fields['email']  = '<p class="comment-form-email"><label for="email">' . __('Email', 'polos') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' .
+                      '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
+	$fields['url']    = '<p class="comment-form-url"><label for="url">' . __('Website', 'polos') . '</label>' .
+                      '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>';
 
 	return $fields;
 }
 add_filter( 'comment_form_default_fields', 'kct_comment_form_fields' );
-
-
-function kct_dev() {
-	echo '<pre>';
-	echo '</pre>';
-}
-//add_action( 'wp_footer', 'kct_dev' );
-
