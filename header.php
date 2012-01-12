@@ -19,9 +19,9 @@ $lang_attr = ob_get_clean();
 <!--[if IE 8]>    <html class="no-js lt-ie9" <?php echo $lang_attr; ?>> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" <?php echo $lang_attr; ?>> <!--<![endif]-->
 <head>
-  <meta charset="<?php bloginfo( 'charset' ) ?>">
-  <title><?php wp_title('') ?></title>
-  <?php wp_head() ?>
+	<meta charset="<?php bloginfo( 'charset' ) ?>">
+	<title><?php wp_title('') ?></title>
+	<?php wp_head() ?>
 </head>
 
 <body <?php body_class() ?>>
@@ -35,12 +35,12 @@ $lang_attr = ob_get_clean();
 				<?php } ?>
 			</hgroup>
 			<?php wp_nav_menu( array(
-				'theme_location'	=> 'main',
-				'container'				=> 'nav',
-				'container_id'		=> 'main-menu',
-				'container_class'	=> 'menu-container main-menu-container',
-				'menu_class'			=> 'menu main-menu',
-				'fallback_cb'			=> false
+				'theme_location'  => 'main',
+				'container'       => 'nav',
+				'container_id'    => 'main-menu',
+				'container_class' => 'menu-container main-menu-container',
+				'menu_class'      => 'menu main-menu',
+				'fallback_cb'     => false
 			) ); ?>
 			<?php do_action( 'kct_after_branding' ) ?>
 		</header>
