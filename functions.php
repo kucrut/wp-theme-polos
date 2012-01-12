@@ -50,12 +50,12 @@ add_action( 'wp_enqueue_scripts', 'polos_sns' );
 # Sidebars
 function polos_sidebars() {
 	register_sidebar( array(
-		'id'						=> 'wa-bottom',
-		'name'					=> __( 'Bottom Widget Area', 'polos' ),
-		'before_widget'	=> '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'	=> "</aside>",
-		'before_title'	=> '<h3 class="widget-title">',
-		'after_title'		=> '</h3>',
+		'id'            => 'wa-bottom',
+		'name'          => __( 'Bottom Widget Area', 'polos' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => "</aside>",
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 }
 
@@ -167,8 +167,8 @@ function polos_after_singular_content() {
 		return;
 
 	wp_link_pages(array(
-		'before'	=> '<nav class="entry-pages"><span class="label">'.__('Pages').':</span>',
-		'after'		=> '</nav>'
+		'before' => '<nav class="entry-pages"><span class="label">'.__('Pages').':</span>',
+		'after'  => '</nav>'
 	));
 
 	if ( is_singular('post') )
