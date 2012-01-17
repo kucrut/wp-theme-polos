@@ -101,7 +101,7 @@ add_action( 'kct_after_branding', 'get_search_form' );
 
 # Replace parent menu item without URL with <span />
 function polos_menu_filter( $item_output, $item, $depth, $args ) {
-	if ( is_array($item->classes) && in_array('parent', $item->classes) )
+	if ( $item->url == '#parent#' )
 		$item_output = '<span class="parent">'.apply_filters( 'the_title', $item->title, $item->ID ).'</span>';
 
 	return $item_output;
