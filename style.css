@@ -708,6 +708,10 @@ a.date {cursor:pointer}
 }
 
 
+/* JetPack */
+.sharing .share-google-plus-1 {padding-top:13px !important;}
+
+
 /* Small screens */
 @media only screen and (max-width: 880px) {
 	body {background:none}
