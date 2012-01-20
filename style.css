@@ -159,10 +159,7 @@ input[type="button"]:active,
 	text-decoration:none
 }
 code, pre, var { font-family: 'Bitstream Vera Sans Mono', 'Courier New', monospace; }
-code, var {
-	color:#44893c;
-	padding:.1em .3em;
-}
+code, var {color:#44893c;}
 pre, blockquote, code, var {
 	-webkit-border-radius:3px;
 	-khtml-border-radius:3px;
