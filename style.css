@@ -711,6 +711,13 @@ a.date {cursor:pointer}
 /* JetPack */
 .sharing .share-google-plus-1 {padding-top:13px !important;}
 
+/* Widgets */
+#wp-calendar { width:97%; empty-cells:hide}
+#wp-calendar caption, #wp-calendar th, #wp-calendar td {padding:.2em;}
+#wp-calendar caption, #wp-calendar th, #wp-calendar tfoot td {text-align:center;}
+#wp-calendar tbody td {text-align:right;}
+#wp-calendar tfoot td {border:0}
+
 
 /* Small screens */
 @media only screen and (max-width: 880px) {
