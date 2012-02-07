@@ -2,7 +2,7 @@
 
 /**
  * @package Polos_Theme
- * @version 0.3
+ * @version 0.4
  */
 
 ob_start();
