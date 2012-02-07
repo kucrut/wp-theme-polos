@@ -14,6 +14,7 @@ either create a child theme and add the css fixes for IE, or simply don't use it
 
 ### Notes
 If you decided to create a child theme, you need to enqueue your child theme's stylesheet:
+
 ```php
 function child_styles() {
 	wp_enqueue_style( 'child-theme', get_bloginfo( 'stylesheet_url' ) );
@@ -22,6 +23,7 @@ add_action( 'wp_enqueue_scripts', 'child_styles', 11 );
 ```
 
 If you don't want the default stylesheet to be used, you need to dequeue it:
+
 ```php
 function child_styles() {
 	wp_dequeue_style( 'polos' );
@@ -31,6 +33,7 @@ add_action( 'wp_enqueue_scripts', 'child_styles', 11 );
 ```
 
 To remove default actions, you need to call `remove_action()` from `init` or `after_setup_theme` hooks:
+
 ```php
 function child_setup() {
 	remove_action( 'kct_after_branding', 'get_search_form' );
