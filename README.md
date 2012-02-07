@@ -19,7 +19,7 @@ function child_styles() {
 	wp_enqueue_style( 'child-theme', get_bloginfo( 'stylesheet_url' ) );
 }
 add_action( 'wp_enqueue_scripts', 'child_styles', 11 );
-````
+```
 
 If you don't want the default stylesheet to be used, you need to dequeue it:
 ```php
