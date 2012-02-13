@@ -128,11 +128,11 @@ function kct_paginate_links( $query = null, $echo = true ) {
 	$big = 999999999;
 
 	$pagination = array(
-		'base'		=> str_replace( $big, '%#%', get_pagenum_link($big) ),
-		'format'	=> '',
-		'total'		=> $query->max_num_pages,
-		'current'	=> $current,
-		'type'		=> 'list'
+		'base'    => str_replace( $big, '%#%', get_pagenum_link($big) ),
+		'format'  => '',
+		'total'   => $query->max_num_pages,
+		'current' => $current,
+		'type'    => 'list'
 	);
 	$links = paginate_links($pagination);
 
