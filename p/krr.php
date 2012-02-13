@@ -241,7 +241,7 @@ function kct_comment_list( $comment, $args, $depth ) {
 		<article id="comment-<?php comment_ID(); ?>" class="comment-item">
 			<footer>
 				<div class="comment-author vcard">
-					<?php echo get_avatar( $comment, 48 ); ?>
+					<?php echo get_avatar( $comment, apply_filters( 'kct_comment_avatar_size', 48) ); ?>
 					<cite class="fn"><?php comment_author_link() ?></cite>
 				</div>
 
