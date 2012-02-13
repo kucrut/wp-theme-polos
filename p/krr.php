@@ -219,7 +219,7 @@ function kct_response_list( $post_id = 0 ) {
 	foreach ( array('comment' => __('Comments', 'polos'), 'pings' => __('Pings', 'polos')) as $type => $title ) {
 		if ( !kct_get_comments_count($post_id, $type) )
 			continue; ?>
-	<h2 id="<?php echo $type ?>-title"><?php echo $title ?></h2>
+	<h2 id="<?php echo $type ?>-title"><?php echo apply_filters( "kct_{$type}_list_title", $title, $post_id ) ?></h2>
 	<?php do_action( "kct_before_{$type}_list" ) ?>
 
 	<ol id="<?php echo $type ?>list" class="responselist">
