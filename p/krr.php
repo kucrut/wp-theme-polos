@@ -46,6 +46,19 @@ add_filter( 'body_class', 'kct_body_class' );
 
 
 /**
+ * Print sidebar
+ */
+function kct_do_sidebar( $sidebar ) {
+	if ( !is_active_sidebar($sidebar) ) return; ?>
+
+<?php do_action( "kct_before_sidebar_{$sidebar}" ); ?>
+<?php dynamic_sidebar( $sidebar ); ?>
+<?php do_action( "kct_after_sidebar_{$sidebar}" ); ?>
+
+<?php }
+
+
+/**
  * Some more body classes
  */
 function kct_post_class( $classes, $class, $post_id ) {
