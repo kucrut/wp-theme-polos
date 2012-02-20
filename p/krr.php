@@ -299,3 +299,32 @@ function kct_comment_form_fields( $fields ) {
 	return $fields;
 }
 add_filter( 'comment_form_default_fields', 'kct_comment_form_fields' );
+
+
+/**
+ * wp_list_pages() CSS Classes
+ *
+ * Append some necessary CSS classes to page lists items
+ * outputted by wp_list_pages() when used for a custom post type
+ */
+function kct_page_css_class( $css_class, $page, $depth, $args, $current_page ) {
+	if ( !is_singular($args['post_type']) )
+		return $css_class;
+
+	global $post;
+	$current_page  = $post->ID;
+	$_current_page = $post;
+	_get_post_ancestors($_current_page);
+
+	if ( isset($_current_page->ancestors) && in_array($page->ID, (array) $_current_page->ancestors) )
+		$css_class[] = 'current_page_ancestor';
+	if ( $page->ID == $current_page )
+		$css_class[] = 'current_page_item';
+	elseif ( $_current_page && $page->ID == $_current_page->post_parent )
+		$css_class[] = 'current_page_parent';
+
+	return $css_class;
+}
+add_filter( 'page_css_class', 'kct_page_css_class', 10, 5 );
+
+?>
