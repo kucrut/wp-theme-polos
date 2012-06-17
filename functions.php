@@ -2,7 +2,7 @@
 
 /**
  * @package Polos_Theme
- * @version 0.4
+ * @version 0.5
  */
 
 # The mini-lib
@@ -24,8 +24,14 @@ if ( !function_exists('polos_setup') ) {
 		register_nav_menus( array('main'=> __('Main Menu', 'polos')) );
 
 		# Features
+		add_theme_support( 'custom-background', array(
+			'default-image'          => get_template_directory_uri() . '/i/bg-dark.png',
+			'default-color'          => '#151515',
+			'wp-head-callback'       => '',
+			'admin-head-callback'    => '',
+			'admin-preview-callback' => ''
+		) );
 		add_theme_support( 'automatic-feed-links' );
-		add_custom_background();
 
 		add_action( 'widgets_init', 'polos_sidebars' );
 	}
