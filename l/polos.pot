@@ -1,167 +1,197 @@
-# Copyright (C) 2010 Polos
-# This file is distributed under the same license as the Polos package.
+# Copyright (C) 2012 kucrut
+# This file is distributed under the GNU General Public License version 2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Polos 0.1\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/polos\n"
-"POT-Creation-Date: 2011-12-29 03:06:48+00:00\n"
+"Project-Id-Version: Polos 0.6\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/polos\n"
+"POT-Creation-Date: 2012-08-15 16:06:18+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2012-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: comments.php:10
+#: comments.php:3
 msgid ""
 "This post is password protected. Enter the password to view any comments."
 msgstr ""
 
-#: comments.php:19
+#: comments.php:11
 msgid "Comments are closed."
 msgstr ""
 
-#: content.php:20
-msgid "Continue&hellip;"
-msgstr ""
-
-#: content-404.php:10
+#: content-404.php:3
 msgid "This is somewhat embarrassing, isn&rsquo;t it?"
 msgstr ""
 
-#: content-404.php:11
+#: content-404.php:4
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help :)"
 msgstr ""
 
-#: content-404.php:14
+#: content-404.php:7
 msgid "Nothing Found"
 msgstr ""
 
-#: content-404.php:15
+#: content-404.php:8
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr ""
 
-#: functions.php:26
+#: content.php:15
+msgid "Continue&hellip;"
+msgstr ""
+
+#: footer.php:9
+msgid "CopyLeft &copy; %d %s"
+msgstr ""
+
+#: footer.php:10
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: functions.php:21
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:56
+#: functions.php:58
 msgid "Bottom Widget Area"
 msgstr ""
 
-#: functions.php:72
+#: functions.php:74
 msgctxt "yearly archives date format"
 msgid "r"
 msgstr ""
 
-#: functions.php:79
+#: functions.php:81
 msgid "View all posts by %s"
 msgstr ""
 
-#: functions.php:80
+#: functions.php:82
 msgid "Posted by %1$s on %2$s"
 msgstr ""
 
-#: functions.php:82
+#: functions.php:84
 msgid "Posted on %s"
 msgstr ""
 
-#: functions.php:88 p/krr.php:198
+#: functions.php:92 p/krr.php:212
 msgid "Comments"
 msgstr ""
 
-#: functions.php:90 p/krr.php:235 p/krr.php:256
+#: functions.php:94 p/krr.php:249 p/krr.php:270
 msgid "Edit"
 msgstr ""
 
-#: functions.php:116
+#: functions.php:122
 msgid "Search results for %s"
 msgstr ""
 
-#: functions.php:120
+#: functions.php:126
 msgid "Entries filed under %s"
 msgstr ""
 
-#: functions.php:124
+#: functions.php:130
 msgid "Entries tagged %s"
 msgstr ""
 
-#: functions.php:128
+#: functions.php:134
 msgid "Daily archives: %s"
 msgstr ""
 
-#: functions.php:132
+#: functions.php:138
 msgid "Monthly archives: %s"
 msgstr ""
 
-#: functions.php:132
+#: functions.php:138
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: functions.php:136
+#: functions.php:142
 msgid "Yearly archives: %s"
 msgstr ""
 
-#: functions.php:136
+#: functions.php:142
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: functions.php:153
+#: functions.php:146
+msgid "Entries posted by %s"
+msgstr ""
+
+#: functions.php:174
 msgid "Pages"
 msgstr ""
 
-#: functions.php:177
+#: functions.php:196
 msgid "Comment navigation"
+msgstr ""
+
+#: header.php:40
+msgid "Go"
+msgstr ""
+
+#: p/kc-dropdown-menu.php:30
+msgid "Submit"
+msgstr ""
+
+#: p/kc-dropdown-menu.php:31
+msgid "Navigate"
+msgstr ""
+
+#: p/krr.php:14
+msgid "Go back"
+msgstr ""
+
+#: p/krr.php:79
+msgid "Page %s"
+msgstr ""
+
+#: p/krr.php:212
+msgid "Pings"
+msgstr ""
+
+#: p/krr.php:242
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: p/krr.php:256
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: p/krr.php:285
+msgid "Name"
+msgstr ""
+
+#: p/krr.php:287
+msgid "Email"
+msgstr ""
+
+#: p/krr.php:289
+msgid "Website"
 msgstr ""
 
 #: searchform.php:2 searchform.php:3 searchform.php:4
 msgid "Search"
 msgstr ""
 
-#: p/krr.php:21
-msgid "Go back"
-msgstr ""
-
-#: p/krr.php:63
-msgid "Page %s"
-msgstr ""
-
-#: p/krr.php:198
-msgid "Pings"
-msgstr ""
-
-#: p/krr.php:228
-msgid "%1$s at %2$s"
-msgstr ""
-
-#: p/krr.php:242
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: p/krr.php:271
-msgid "Name"
-msgstr ""
-
-#: p/krr.php:273
-msgid "Email"
-msgstr ""
-
-#: p/krr.php:275
-msgid "Website"
-msgstr ""
-
 #. Theme Name of the plugin/theme
 msgid "Polos"
 msgstr ""
 
+#. Theme URI of the plugin/theme
+msgid "http://kucrut.org/wordpress-theme-polos/"
+msgstr ""
+
 #. Description of the plugin/theme
-msgid "A minimalist black on white theme."
+msgid ""
+"HTML5 minimalist black-on-white theme, no-nonsense, built for modern "
+"browsers ONLY (IE 9+)."
 msgstr ""
 
 #. Author of the plugin/theme
