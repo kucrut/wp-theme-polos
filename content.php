@@ -1,11 +1,3 @@
-<?php
-
-/**
- * @package Polos_Theme
- * @version 0.5
- */
-
-?>
 				<?php do_action( 'kct_before_entry' ); ?>
 				<article id="post-<?php the_ID() ?>" <?php post_class() ?>>
 					<header class="entry-title">

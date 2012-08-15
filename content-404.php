@@ -1,11 +1,4 @@
 <?php
-
-/**
- * @package Polos_Theme
- * @version 0.5
- */
-
-
 if ( is_404() ) {
 	$title = __('This is somewhat embarrassing, isn&rsquo;t it?', 'polos');
 	$info = __('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help :)', 'polos');

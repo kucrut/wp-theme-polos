@@ -1,17 +1,8 @@
 <?php
-
-/**
- * @package Polos_Theme
- * @version 0.5
- */
-
 ob_start();
 language_attributes();
 $lang_attr = ob_get_clean();
-
 ?>
-
-
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php echo $lang_attr; ?>> <![endif]-->
@@ -34,13 +25,21 @@ $lang_attr = ob_get_clean();
 				<h2 id="site-description"><?php echo $site_desc ?></h2>
 				<?php } ?>
 			</hgroup>
-			<?php wp_nav_menu( array(
-				'theme_location'  => 'main',
-				'container'       => 'nav',
-				'container_id'    => 'main-menu',
-				'container_class' => 'menu-container main-menu-container',
-				'menu_class'      => 'menu main-menu',
-				'fallback_cb'     => false
-			) ); ?>
+			<?php
+				if ( $menu_id = kc_get_menu_by_location('main') ) {
+					wp_nav_menu( array(
+						'menu'            => $menu_id,
+						'container'       => 'nav',
+						'container_id'    => 'main-menu',
+						'container_class' => 'menu-container main-menu-container',
+						'menu_class'      => 'menu main-menu',
+						'fallback_cb'     => false
+					) );
+					kc_dropdown_menu( $menu_id, array(
+						'menu_id' => 'main-menu-small',
+						'submit_text' => __('Go', 'polos')
+					) );
+				}
+			?>
 			<?php do_action( 'kct_after_branding' ) ?>
 		</header>

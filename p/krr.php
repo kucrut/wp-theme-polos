@@ -1,11 +1,4 @@
 <?php
-
-/**
- * @package Polos_Theme
- * @version 0.5
- */
-
-
 /**
  * Check requirements
  *
@@ -327,4 +320,22 @@ function kct_page_css_class( $css_class, $page, $depth, $args, $current_page ) {
 }
 add_filter( 'page_css_class', 'kct_page_css_class', 10, 5 );
 
-?>
+
+/**
+ * Get nav menu ID by theme location
+ *
+ * @param string $location Theme location
+ * @return bool|int Menu ID. False on failure
+ */
+function kc_get_menu_by_location( $location ) {
+	$menu_id = false;
+	if (
+		( $locations = get_nav_menu_locations() )
+		&& isset( $locations[$location] )
+		&& ( $menu = wp_get_nav_menu_object( $locations[$location] ) )
+		&& !is_wp_error( $menu )
+	)
+		$menu_id = $menu->term_id;
+
+	return $menu_id;
+}

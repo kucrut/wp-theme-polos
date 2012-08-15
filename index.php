@@ -1,11 +1,3 @@
-<?php
-
-/**
- * @package Polos_Theme
- * @version 0.5
- */
-
-?>
 <?php get_header() ?>
 
 		<div id="content" role="main">

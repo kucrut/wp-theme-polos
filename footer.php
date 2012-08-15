@@ -1,11 +1,3 @@
-<?php
-
-/**
- * @package Polos_Theme
- * @version 0.5
- */
-
-?>
 		<footer id="colophon">
 		<?php if ( is_active_sidebar( 'wa-bottom') ) { ?>
 			<?php do_action( 'kct_before_sidebar_wa-bottom' ); ?>

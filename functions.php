@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @package Polos_Theme
- * @version 0.5
- */
-
 # The mini-lib
 require_once get_template_directory() . '/p/krr.php';
 
@@ -17,11 +12,17 @@ if ( ! isset( $content_width ) )
 # Setup
 if ( !function_exists('polos_setup') ) {
 	function polos_setup() {
+		$theme_dir = get_template_directory();
+
 		# i18n
-		load_theme_textdomain( 'polos', get_template_directory() . '/l' );
+		load_theme_textdomain( 'polos', "{$theme_dir}/l" );
 
 		# Menus
 		register_nav_menus( array('main'=> __('Main Menu', 'polos')) );
+
+		# Dropdwon menu support for small screen devices
+		if ( !function_exists('kc_dropdown_menu') && !is_admin() )
+			require_once "{$theme_dir}/p/kc-dropdown-menu.php";
 
 		# Features
 		add_theme_support( 'custom-background', array(
@@ -198,5 +199,3 @@ function polos_comments_nav() {
 	<?php }
 }
 add_action( 'kct_after_comment_list', 'polos_comments_nav' );
-
-?>

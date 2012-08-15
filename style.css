@@ -4,7 +4,7 @@ Theme URI: http://kucrut.org/wordpress-theme-polos/
 Author: kucrut
 Author URI: http://kucrut.org/
 Description: HTML5 minimalist black-on-white theme, no-nonsense, built for modern browsers ONLY (IE 9+).
-Version: 0.5
+Version: 0.6
 License: GNU General Public License version 2
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Tags: white, one-column
@@ -263,6 +263,12 @@ td, th {
 	border:1px solid #c0c0c0;
 	padding:.25em 1em;
 }
+select {
+	border:1px solid #c0c0c0;
+	padding:.15em .4em;
+	border-radius:3px;
+	background:none;
+}
 .impo {color:#ec871d}
 .ccomment {color:#5f5a60}
 
@@ -473,6 +479,10 @@ td, th {
 	content:' *';
 	color:#111;
 	font-weight:bold;
+}
+#main-menu-small {
+	display:none;
+	text-align:center;
 }
 
 
@@ -724,16 +734,15 @@ a.date {cursor:pointer}
 	body {background:none}
 	#page {width:auto;margin:0;padding:1em;box-shadow:none;border:0}
 	#branding {height:auto;margin-bottom:0;padding-bottom:1em;}
-	#site-title {font-size:2em}
-	#site-description {font-size:1em;margin-bottom:2em}
+	#branding hgroup {text-align:center;}
+	#branding #searchform {position:relative;right:auto;top:auto;margin:1em auto 0}
+	#branding #s {font-size:1em}
+	#site-title {font-size:2.5em}
+	#site-description {font-size:1.5em;margin-bottom:1.25em}
 	#site-description:after {padding-right:0;}
 
-	.main-menu-container {position:static}
-	.main-menu {text-align:left !important}
-	.main-menu li {position:static;display:block;margin-bottom:.75em !important;border:0 !important}
-	.main-menu a, .main-menu .parent {padding:0 !important;display:inline !important}
-	.main-menu .sub-menu {display:block !important;position:static !important;padding:.75em 0 0 1em !important;margin:0}
-	.main-menu .sub-menu:before {display:none !important}
+	#main-menu {display:none;}
+	#main-menu-small {display:block;}
 
 	h1 {font-size:1.6em}
 	.wp-caption, .gallery-caption {max-width:99% !important}
@@ -751,8 +760,6 @@ a.date {cursor:pointer}
 	.commentmetadata:after {display:none;}
 
 	.widget {width:30%;margin-right:5%}
-	#branding #searchform {position:relative;right:auto;top:auto;margin:1.5em 0 1em}
-	#branding #s {font-size:1em}
 }
 
 @media only screen and (width: 320px) {
