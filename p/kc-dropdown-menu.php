@@ -27,7 +27,7 @@ class kcEssentials_Dropdown_Menu {
 			'depth'       => 0,
 			'pad'         => '&mdash;',
 			'echo'        => true,
-			'submit_text' => __('Submit'),
+			'submit_text' => __('Submit', 'polos'),
 			'select_text' => '&mdash;&nbsp;'.__('Navigate', 'polos').'&nbsp;&mdash;',
 			'js'          => true,
 			'menu_class'  => '',
