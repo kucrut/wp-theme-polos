@@ -301,13 +301,12 @@ add_filter( 'comment_form_default_fields', 'kct_comment_form_fields' );
  * outputted by wp_list_pages() when used for a custom post type
  */
 function kct_page_css_class( $css_class, $page, $depth, $args, $current_page ) {
-	if ( !is_singular($args['post_type']) )
+	if ( isset($args['post_type']) && !is_singular($args['post_type']) )
 		return $css_class;
 
 	global $post;
 	$current_page  = $post->ID;
-	$_current_page = $post;
-	_get_post_ancestors($_current_page);
+	$_current_page = get_post( $post );
 
 	if ( isset($_current_page->ancestors) && in_array($page->ID, (array) $_current_page->ancestors) )
 		$css_class[] = 'current_page_ancestor';
