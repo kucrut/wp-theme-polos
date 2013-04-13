@@ -30,6 +30,7 @@ if ( !function_exists('polos_setup') ) {
 			'default-color' => '151515'
 		) );
 		add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'post-thumbnails' );
 
 		add_action( 'widgets_init', 'polos_sidebars' );
 	}
